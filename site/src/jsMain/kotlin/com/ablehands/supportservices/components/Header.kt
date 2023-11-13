@@ -10,11 +10,12 @@ import com.ablehands.supportservices.util.Constants.FONT_FAMILY
 import com.ablehands.supportservices.util.Res
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextDecorationLine
-import com.varabyte.kobweb.compose.foundation.layout.*
+import com.varabyte.kobweb.compose.foundation.layout.Arrangement
+import com.varabyte.kobweb.compose.foundation.layout.Box
+import com.varabyte.kobweb.compose.foundation.layout.Column
+import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.graphics.Color
-import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.graphics.Image
@@ -29,7 +30,6 @@ import org.jetbrains.compose.web.css.deg
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.H1
-import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
@@ -38,7 +38,7 @@ fun Header(onMenuClicked: (Boolean) -> Unit) {
     Row(
         modifier = Modifier
             .fillMaxWidth(if (breakpoint > Breakpoint.MD) 85.percent else 90.percent)
-            .margin(topBottom = 50.px),
+            .margin(topBottom = 40.px),
         horizontalArrangement = if (breakpoint <= Breakpoint.MD) Arrangement.Center else Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -90,7 +90,7 @@ fun RightSide() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             FaPhone(
-                modifier = Modifier.color(Theme.Red.rgb).rotateY(180.deg).margin(bottom = 10.px, right = 8.px),
+                modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 10.px, right = 8.px),
                 size = IconSize.LG
             )
             H1(
@@ -98,7 +98,7 @@ fun RightSide() {
                     .fontFamily(FONT_FAMILY)
                     .fontSize(22.px)
                     .fontWeight(FontWeight.Black)
-                    .color(Theme.Red.rgb)
+                    .color(Theme.Base.rgb)
                     .toAttrs()
             ) {
                 Text("+91 8907471155")

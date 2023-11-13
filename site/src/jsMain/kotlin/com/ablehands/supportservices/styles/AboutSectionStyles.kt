@@ -14,17 +14,10 @@ import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.ms
 import org.jetbrains.compose.web.css.px
 
-@OptIn(ExperimentalComposeWebApi::class)
 val LogoStyle by ComponentStyle {
     base {
         Modifier
-            .transform { scale(1f) }
             .size(150.px)
-            .transition(CSSTransition(property = "transform", duration = 200.ms))
-    }
-    hover {
-        Modifier
-            .transform { scale(1.05f) }
     }
 }
 
@@ -33,11 +26,14 @@ val PhoneNumberStyle by ComponentStyle {
     base {
         Modifier
             .transform { scale(1f) }
-            .transition(CSSTransition(property = "transform", duration = 200.ms))
+            .transition(
+                CSSTransition(property = "transform", duration = 200.ms)
+            )
     }
     hover {
         Modifier
             .transform { scale(1.1f) }
+
     }
 }
 
@@ -51,6 +47,6 @@ val NavigationItemStyle by ComponentStyle {
         Modifier.color(Theme.Base.rgb)
     }
     hover {
-        Modifier.color(Theme.Secondary.rgb)
+        Modifier.color(Theme.Primary.rgb)
     }
 }

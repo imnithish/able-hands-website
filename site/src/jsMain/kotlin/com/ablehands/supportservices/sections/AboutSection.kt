@@ -2,6 +2,7 @@ package com.ablehands.supportservices.sections
 
 import androidx.compose.runtime.Composable
 import com.ablehands.supportservices.components.Header
+import com.ablehands.supportservices.components.SectionTitle
 import com.ablehands.supportservices.models.Section
 import com.ablehands.supportservices.models.Theme
 import com.ablehands.supportservices.styles.LogoStyle
@@ -27,6 +28,7 @@ import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.dom.Col
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
@@ -58,58 +60,75 @@ fun AboutSection(onMenuClicked: (Boolean) -> Unit) {
 
 @Composable
 fun AboutContentMD() {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth(90.percent).backgroundColor(Theme.Primary.rgb).borderRadius(8.px).padding(12.px),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Image(
-            modifier = Modifier.size(100.percent).objectFit(ObjectFit.ScaleDown).borderRadius(8.px),
-            src = Res.Image.unnamed
-        )
 
-        P(
-            attrs = Modifier
-                .weight(1f)
-                .fontFamily(Constants.FONT_FAMILY)
-                .margin(top = 12.px)
-                .fontSize(18.px)
-                .fontWeight(FontWeight.Black)
-                .color(Theme.LighterGray.rgb)
-                .toAttrs()
+    Column(
+        Modifier
+            .fillMaxWidth(90.percent)
+    ) {
+        SectionTitle(section = Section.About)
+        Column(
+            modifier = Modifier
+                .margin(top = 6.px)
+                .fillMaxWidth().backgroundColor(Theme.LightGray.rgb).borderRadius(8.px).padding(12.px),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(about_us)
+
+            Image(
+                modifier = Modifier.size(100.percent).objectFit(ObjectFit.ScaleDown).borderRadius(8.px),
+                src = Res.Image.unnamed
+            )
+
+            P(
+                attrs = Modifier
+                    .weight(1f)
+                    .fontFamily(Constants.FONT_FAMILY)
+                    .margin(top = 12.px)
+                    .fontSize(18.px)
+                    .fontWeight(FontWeight.Normal)
+                    .color(Theme.Base.rgb)
+                    .toAttrs()
+            ) {
+                Text(about_us)
+            }
         }
+
     }
+
 }
 
 @Composable
 fun AboutContent() {
-    Row(
+    Column(
         modifier = Modifier
             .fillMaxWidth(85.percent)
-            .backgroundColor(Theme.Primary.rgb).borderRadius(8.px)
-            .margin(top = 8.px)
-            .padding(12.px),
-        verticalAlignment = Alignment.CenterVertically
     ) {
-
-        P(
-            attrs = Modifier
-                .weight(1f)
-                .fontFamily(Constants.FONT_FAMILY)
-                .margin(right = 60.px)
-                .fontSize(20.px)
-                .fontWeight(FontWeight.Black)
-                .color(Theme.LighterGray.rgb)
-                .toAttrs()
+        SectionTitle(section = Section.About, modifier = Modifier.padding(left = 32.px))
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .margin(top = 32.px)
+                .backgroundColor(Theme.LightGray.rgb).borderRadius(8.px)
+                .padding(12.px),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(about_us)
-        }
 
-        Image(
-            modifier = Modifier.borderRadius(8.px).weight(1f).scale(1.2f),
-            src = Res.Image.unnamed
-        )
+            Image(
+                modifier = Modifier.borderRadius(8.px).weight(1f).scale(1.2f),
+                src = Res.Image.unnamed
+            )
+
+            P(
+                attrs = Modifier
+                    .weight(1f)
+                    .fontFamily(Constants.FONT_FAMILY)
+                    .margin(left = 60.px)
+                    .fontSize(18.px)
+                    .fontWeight(FontWeight.Normal)
+                    .color(Theme.Base.rgb)
+                    .toAttrs()
+            ) {
+                Text(about_us)
+            }
+        }
     }
 }
