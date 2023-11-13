@@ -6,6 +6,7 @@ import com.ablehands.supportservices.models.Theme
 import com.ablehands.supportservices.styles.NavigationItemStyle
 import com.ablehands.supportservices.styles.PhoneNumberStyle
 import com.ablehands.supportservices.util.Constants.FONT_FAMILY
+import com.ablehands.supportservices.util.Content
 import com.ablehands.supportservices.util.Res
 import com.varabyte.kobweb.compose.css.*
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -18,6 +19,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.navigation.OpenLinkStrategy
 import com.varabyte.kobweb.silk.components.graphics.Image
+import com.varabyte.kobweb.silk.components.icons.fa.FaEnvelope
 import com.varabyte.kobweb.silk.components.icons.fa.FaPhone
 import com.varabyte.kobweb.silk.components.icons.fa.FaXmark
 import com.varabyte.kobweb.silk.components.icons.fa.IconSize
@@ -65,7 +67,7 @@ fun OverflowMenu(onMenuClosed: (Boolean) -> Unit) {
             modifier = Modifier
                 .fillMaxHeight()
                 .padding(all = 25.px)
-                .width(if (breakpoint < Breakpoint.MD) 50.percent else 25.percent)
+                .width(if (breakpoint < Breakpoint.MD) 90.percent else 55.percent)
                 .overflow(Overflow.Auto)
                 .scrollBehavior(ScrollBehavior.Smooth)
                 .backgroundColor(Colors.White)
@@ -134,6 +136,45 @@ fun OverflowMenu(onMenuClosed: (Boolean) -> Unit) {
                         .toAttrs()
                 ) {
                     Text("+91 8907471155")
+                }
+            }
+
+            Row(
+                Modifier.margin(top = 4.px),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                FaEnvelope(
+                    modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 8.px, right = 8.px),
+                    size = IconSize.SM
+                )
+                H1(
+                    attrs = Modifier
+                        .fontFamily(FONT_FAMILY)
+                        .fontSize(14.px)
+                        .fontWeight(FontWeight.Black)
+                        .color(Theme.Base.rgb)
+                        .toAttrs()
+                ) {
+                    Text(Content.email1)
+                }
+            }
+            Row(
+                Modifier.margin(top = 4.px),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                FaEnvelope(
+                    modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 8.px, right = 8.px),
+                    size = IconSize.SM
+                )
+                H1(
+                    attrs = Modifier
+                        .fontFamily(FONT_FAMILY)
+                        .fontSize(14.px)
+                        .fontWeight(FontWeight.Black)
+                        .color(Theme.Base.rgb)
+                        .toAttrs()
+                ) {
+                    Text(Content.email2)
                 }
             }
         }

@@ -40,13 +40,13 @@ val PhoneNumberStyle by ComponentStyle {
 val NavigationItemStyle by ComponentStyle {
     base {
         Modifier
-            .color(Theme.Base.rgb)
+            .color(Theme.Primary.rgb)
             .transition(CSSTransition(property = "color", duration = 200.ms))
     }
     anyLink {
-        Modifier.color(Theme.Base.rgb)
+        Modifier.color(Theme.Primary.rgb)
     }
     hover {
-        Modifier.color(Theme.Primary.rgb)
+        Modifier.color(Theme.Secondary.rgb)
     }
 }

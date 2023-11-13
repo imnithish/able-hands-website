@@ -26,4 +26,8 @@ object Content {
         "Able Hands Support Service's vision is to create a resilient and empowered community in participation to support people with disabilities to live a great life with choice.",
         "Empowerment, Dignity, Respect, Trust, integrity and Innovation."
     )
+
+    const val number ="+61 451120279"
+    const val email1 ="info@ablehandssupportservices.au"
+    const val email2 ="contact@ablehandssupportservices.au"
 }

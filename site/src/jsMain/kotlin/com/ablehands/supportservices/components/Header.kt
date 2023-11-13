@@ -7,6 +7,7 @@ import com.ablehands.supportservices.styles.LogoStyle
 import com.ablehands.supportservices.styles.NavigationItemStyle
 import com.ablehands.supportservices.styles.PhoneNumberStyle
 import com.ablehands.supportservices.util.Constants.FONT_FAMILY
+import com.ablehands.supportservices.util.Content
 import com.ablehands.supportservices.util.Res
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextDecorationLine
@@ -19,9 +20,7 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.graphics.Image
-import com.varabyte.kobweb.silk.components.icons.fa.FaBars
-import com.varabyte.kobweb.silk.components.icons.fa.FaPhone
-import com.varabyte.kobweb.silk.components.icons.fa.IconSize
+import com.varabyte.kobweb.silk.components.icons.fa.*
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.toModifier
@@ -101,24 +100,71 @@ fun RightSide() {
                     .color(Theme.Base.rgb)
                     .toAttrs()
             ) {
-                Text("+91 8907471155")
+                Text(Content.number)
+            }
+        }
+        Row(
+            modifier = PhoneNumberStyle.toModifier(),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            FaEnvelope(
+                modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 10.px, right = 8.px),
+                size = IconSize.LG
+            )
+            H1(
+                attrs = Modifier
+                    .fontFamily(FONT_FAMILY)
+                    .fontSize(22.px)
+                    .fontWeight(FontWeight.Black)
+                    .color(Theme.Base.rgb)
+                    .toAttrs()
+            ) {
+                Text(Content.email1)
+            }
+        }
+        Row(
+            modifier = PhoneNumberStyle.toModifier(),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            FaEnvelope(
+                modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 10.px, right = 8.px),
+                size = IconSize.LG
+            )
+            H1(
+                attrs = Modifier
+                    .fontFamily(FONT_FAMILY)
+                    .fontSize(22.px)
+                    .fontWeight(FontWeight.Black)
+                    .color(Theme.Base.rgb)
+                    .toAttrs()
+            ) {
+                Text(Content.email2)
             }
         }
         Row(
             modifier = Modifier
-                .fillMaxWidth().margin(top = 16.px),
+                .fillMaxWidth().margin(top = 20.px),
         ) {
             Section.entries.forEachIndexed { index, section ->
-                Link(
-                    modifier = NavigationItemStyle.toModifier()
-                        .fontFamily(FONT_FAMILY)
-                        .fontSize(20.px)
-                        .fontWeight(FontWeight.Black)
-                        .textDecorationLine(TextDecorationLine.None)
-                        .margin(right = if (index != Section.entries.size - 1) 18.px else 0.px),
-                    path = section.path,
-                    text = section.title
-                )
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Link(
+                        modifier = NavigationItemStyle.toModifier()
+                            .fontFamily(FONT_FAMILY)
+                            .fontSize(20.px)
+                            .fontWeight(FontWeight.Black)
+                            .margin(right = if (index == 0) 18.px else 0.px)
+                            .textDecorationLine(TextDecorationLine.None),
+                        path = section.path,
+                        text = section.title
+                    )
+
+                    if (index != 0)
+                        FaAngleDown(
+                            modifier = Modifier.color(Theme.Primary.rgb)
+                                .margin(left = 4.px, right = if (index != Section.entries.size - 1) 18.px else 0.px)
+                        )
+                }
+
             }
         }
     }

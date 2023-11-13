@@ -116,7 +116,7 @@ fun MissionContentMD() {
                         .fontFamily(Constants.FONT_FAMILY)
                         .fontSize(20.px)
                         .fontWeight(FontWeight.Black)
-                        .color(Theme.Base.rgb)
+                        .color(Theme.Primary.rgb)
                         .toAttrs()
                 ) {
                     Text("Our Vision")
@@ -140,7 +140,7 @@ fun MissionContentMD() {
                         .fontFamily(Constants.FONT_FAMILY)
                         .fontSize(20.px)
                         .fontWeight(FontWeight.Black)
-                        .color(Theme.Base.rgb)
+                        .color(Theme.Primary.rgb)
                         .toAttrs()
                 ) {
                     Text("Our Values")
@@ -168,7 +168,7 @@ fun MissionContentMD() {
 fun MissionContent() {
     Column(
         modifier = Modifier
-            .margin(top = 128.px)
+            .margin(top = 112.px)
             .fillMaxWidth(85.percent),
         horizontalAlignment = Alignment.End
     ) {
@@ -228,7 +228,7 @@ fun MissionContent() {
                         .fontFamily(Constants.FONT_FAMILY)
                         .fontSize(20.px)
                         .fontWeight(FontWeight.Black)
-                        .color(Theme.Base.rgb)
+                        .color(Theme.Primary.rgb)
                         .toAttrs()
                 ) {
                     Text("Our Vision")
@@ -252,7 +252,7 @@ fun MissionContent() {
                         .fontFamily(Constants.FONT_FAMILY)
                         .fontSize(20.px)
                         .fontWeight(FontWeight.Black)
-                        .color(Theme.Base.rgb)
+                        .color(Theme.Primary.rgb)
                         .toAttrs()
                 ) {
                     Text("Our Values")
