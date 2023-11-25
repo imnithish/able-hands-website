@@ -1,14 +1,12 @@
 package com.ablehands.supportservices.sections
 
 import androidx.compose.runtime.Composable
-import com.ablehands.supportservices.components.Header
 import com.ablehands.supportservices.components.SectionTitle
 import com.ablehands.supportservices.models.Section
 import com.ablehands.supportservices.models.Theme
 import com.ablehands.supportservices.util.Constants
 import com.ablehands.supportservices.util.Content
 import com.ablehands.supportservices.util.Res
-import com.varabyte.kobweb.compose.css.FontStyle
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.ObjectFit
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -27,7 +25,6 @@ import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
-import org.jetbrains.compose.web.dom.Th
 
 @Composable
 fun MissionSection() {
@@ -174,7 +171,6 @@ fun MissionContent() {
     ) {
         SectionTitle(
             section = Section.Mission,
-            color = Theme.Primary.rgb,
             anim = true,
             modifier = Modifier.padding(right = 32.px)
         )
@@ -182,7 +178,7 @@ fun MissionContent() {
             modifier = Modifier
                 .fillMaxWidth()
                 .margin(top = 32.px)
-                .backgroundColor(Theme.LightGray.rgb).borderRadius(8.px)
+                .backgroundColor(Theme.LightBlue.rgb).borderRadius(8.px)
                 .padding(12.px),
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -191,9 +187,9 @@ fun MissionContent() {
                 P(
                     attrs = Modifier
                         .weight(2f)
-                        .fontFamily(Constants.FONT_FAMILY)
+                        .fontFamily(Constants.FONT_FAMILY2)
                         .fontSize(18.px)
-                        .fontWeight(FontWeight.Normal)
+                        .fontWeight(FontWeight.SemiBold)
                         .color(Theme.Base.rgb)
                         .toAttrs()
                 ) {
@@ -202,9 +198,9 @@ fun MissionContent() {
                 P(
                     attrs = Modifier
                         .weight(2f)
-                        .fontFamily(Constants.FONT_FAMILY)
+                        .fontFamily(Constants.FONT_FAMILY2)
                         .fontSize(18.px)
-                        .fontWeight(FontWeight.Normal)
+                        .fontWeight(FontWeight.SemiBold)
                         .color(Theme.Base.rgb)
                         .toAttrs()
                 ) {
@@ -213,9 +209,9 @@ fun MissionContent() {
                 P(
                     attrs = Modifier
                         .weight(2f)
-                        .fontFamily(Constants.FONT_FAMILY)
+                        .fontFamily(Constants.FONT_FAMILY2)
                         .fontSize(18.px)
-                        .fontWeight(FontWeight.Normal)
+                        .fontWeight(FontWeight.SemiBold)
                         .color(Theme.Base.rgb)
                         .toAttrs()
                 ) {
@@ -225,7 +221,7 @@ fun MissionContent() {
                 H1(
                     attrs = Modifier
                         .weight(2f)
-                        .fontFamily(Constants.FONT_FAMILY)
+                        .fontFamily(Constants.FONT_FAMILY2)
                         .fontSize(20.px)
                         .fontWeight(FontWeight.Black)
                         .color(Theme.Primary.rgb)
@@ -237,9 +233,9 @@ fun MissionContent() {
                 P(
                     attrs = Modifier
                         .weight(2f)
-                        .fontFamily(Constants.FONT_FAMILY)
+                        .fontFamily(Constants.FONT_FAMILY2)
                         .fontSize(18.px)
-                        .fontWeight(FontWeight.Normal)
+                        .fontWeight(FontWeight.SemiBold)
                         .color(Theme.Base.rgb)
                         .toAttrs()
                 ) {
@@ -249,7 +245,7 @@ fun MissionContent() {
                 H1(
                     attrs = Modifier
                         .weight(2f)
-                        .fontFamily(Constants.FONT_FAMILY)
+                        .fontFamily(Constants.FONT_FAMILY2)
                         .fontSize(20.px)
                         .fontWeight(FontWeight.Black)
                         .color(Theme.Primary.rgb)
@@ -261,9 +257,9 @@ fun MissionContent() {
                 P(
                     attrs = Modifier
                         .weight(2f)
-                        .fontFamily(Constants.FONT_FAMILY)
+                        .fontFamily(Constants.FONT_FAMILY2)
                         .fontSize(18.px)
-                        .fontWeight(FontWeight.Normal)
+                        .fontWeight(FontWeight.SemiBold)
                         .color(Theme.Base.rgb)
                         .toAttrs()
                 ) {

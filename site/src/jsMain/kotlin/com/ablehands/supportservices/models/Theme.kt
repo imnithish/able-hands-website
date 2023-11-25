@@ -12,5 +12,6 @@ enum class Theme(
     Base(hex = "#121D34", rgb = rgb(r = 18, g = 29, b = 52)),
     Red(hex = "#8B0000", rgb = rgb(r = 139, g = 0, b = 0)),
     LightGray(hex = "#EDEDED", rgb = rgb(r = 237, g = 237, b = 237)),
-    LighterGray(hex = "#F9F9F9", rgb = rgb(r = 249, g = 249, b = 249))
+    LighterGray(hex = "#F9F9F9", rgb = rgb(r = 249, g = 249, b = 249)),
+    LightBlue(hex = "#e8ecf3", rgb = rgb(r = 232, g = 236, b = 243))
 }

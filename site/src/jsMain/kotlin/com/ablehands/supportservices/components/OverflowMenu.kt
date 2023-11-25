@@ -97,7 +97,7 @@ fun OverflowMenu(onMenuClosed: (Boolean) -> Unit) {
                     src = Res.Image.logo
                 )
             }
-            Section.entries.toTypedArray().take(6).forEach { section ->
+            Section.entries.toTypedArray().take(6).filterNot { it.id == "main" }.forEach { section ->
                 Link(
                     modifier = NavigationItemStyle.toModifier()
                         .margin(bottom = 10.px)

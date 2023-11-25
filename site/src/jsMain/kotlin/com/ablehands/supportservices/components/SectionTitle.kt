@@ -4,6 +4,7 @@ import androidx.compose.runtime.*
 import com.ablehands.supportservices.models.Section
 import com.ablehands.supportservices.models.Theme
 import com.ablehands.supportservices.util.Constants.FONT_FAMILY
+import com.ablehands.supportservices.util.Constants.FONT_FAMILY2
 import com.ablehands.supportservices.util.ObserveViewportEntered
 import com.varabyte.kobweb.compose.css.CSSTransition
 import com.varabyte.kobweb.compose.css.FontWeight
@@ -25,7 +26,7 @@ import org.jetbrains.compose.web.dom.Th
 fun SectionTitle(
     modifier: Modifier = Modifier,
     section: Section,
-    color: CSSColorValue = Theme.Primary.rgb,
+    color: CSSColorValue = Theme.Base.rgb,
     anim: Boolean = false
 ) {
 
@@ -44,14 +45,14 @@ fun SectionTitle(
 
     P(
         attrs = modifier
-            .fontFamily(FONT_FAMILY)
+            .fontFamily(FONT_FAMILY2)
             .fontSize(32.px)
             .margin(
                 right = if (anim) titleMargin else 0.px,
                 top = 0.px,
                 bottom = 0.px
             )
-            .fontWeight(FontWeight.Black)
+            .fontWeight(FontWeight.Bold)
             .color(color)
             .transition(CSSTransition(property = "margin", duration = 300.ms))
             .toAttrs()

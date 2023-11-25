@@ -7,8 +7,10 @@ import com.ablehands.supportservices.styles.LogoStyle
 import com.ablehands.supportservices.styles.NavigationItemStyle
 import com.ablehands.supportservices.styles.PhoneNumberStyle
 import com.ablehands.supportservices.util.Constants.FONT_FAMILY
+import com.ablehands.supportservices.util.Constants.FONT_FAMILY2
 import com.ablehands.supportservices.util.Content
 import com.ablehands.supportservices.util.Res
+import com.varabyte.kobweb.compose.css.CSSColor
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextDecorationLine
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -17,6 +19,7 @@ import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.graphics.Image
@@ -108,13 +111,13 @@ fun RightSide() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             FaEnvelope(
-                modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 10.px, right = 8.px),
-                size = IconSize.LG
+                modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 4.px, right = 6.px),
+                size = IconSize.SM
             )
             H1(
                 attrs = Modifier
                     .fontFamily(FONT_FAMILY)
-                    .fontSize(22.px)
+                    .fontSize(18.px)
                     .fontWeight(FontWeight.Black)
                     .color(Theme.Base.rgb)
                     .toAttrs()
@@ -127,13 +130,13 @@ fun RightSide() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             FaEnvelope(
-                modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 10.px, right = 8.px),
-                size = IconSize.LG
+                modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 4.px, right = 6.px),
+                size = IconSize.SM
             )
             H1(
                 attrs = Modifier
                     .fontFamily(FONT_FAMILY)
-                    .fontSize(22.px)
+                    .fontSize(18.px)
                     .fontWeight(FontWeight.Black)
                     .color(Theme.Base.rgb)
                     .toAttrs()
@@ -141,28 +144,24 @@ fun RightSide() {
                 Text(Content.email2)
             }
         }
+
+        Box(modifier = Modifier.fillMaxWidth().height(1.5.px).background(org.jetbrains.compose.web.css.Color.lightgray))
         Row(
             modifier = Modifier
                 .fillMaxWidth().margin(top = 20.px),
         ) {
-            Section.entries.forEachIndexed { index, section ->
+            Section.entries.filterNot { it.id=="main" }.forEachIndexed { index, section ->
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Link(
                         modifier = NavigationItemStyle.toModifier()
-                            .fontFamily(FONT_FAMILY)
-                            .fontSize(20.px)
-                            .fontWeight(FontWeight.Black)
-                            .margin(right = if (index == 0) 18.px else 0.px)
+                            .fontFamily(FONT_FAMILY2)
+                            .fontSize(18.px)
+                            .fontWeight(FontWeight.Bolder)
+                            .margin(right = if (index == 3) 0.px else 18.px)
                             .textDecorationLine(TextDecorationLine.None),
                         path = section.path,
-                        text = section.title
+                        text = section.titleVariant
                     )
-
-                    if (index != 0)
-                        FaAngleDown(
-                            modifier = Modifier.color(Theme.Primary.rgb)
-                                .margin(left = 4.px, right = if (index != Section.entries.size - 1) 18.px else 0.px)
-                        )
                 }
 
             }

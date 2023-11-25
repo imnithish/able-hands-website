@@ -6,6 +6,12 @@ enum class Section(
     val titleVariant: String,
     val path: String
 ) {
+    Main(
+        id = "main",
+        title = "Main",
+        titleVariant = "",
+        path = "#main"
+    ),
     About(
         id = "about",
         title = "About",
@@ -21,13 +27,13 @@ enum class Section(
     Services(
         id = "services",
         title = "Services",
-        titleVariant = "",
+        titleVariant = "Our Services",
         path = "#services"
     ),
     Contact(
         id = "contact",
         title = "Contact",
-        titleVariant = "",
+        titleVariant = "Contact Us",
         path = "#contact"
     )
 }

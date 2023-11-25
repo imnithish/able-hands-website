@@ -3,6 +3,7 @@ package com.ablehands.supportservices.util
 object Constants {
     const val SECTION_WIDTH = 1920
     const val FONT_FAMILY = "DM Sans"
+    const val FONT_FAMILY2 = "Raleway"
 }
 
 object Res {
@@ -13,6 +14,7 @@ object Res {
         const val logo = "logo.png"
         const val unnamed = "unnamed.jpg"
         const val mission = "image2.jpg"
+        const val wheelchair = "wheelchair.jpg"
     }
 }
 
@@ -28,6 +30,6 @@ object Content {
     )
 
     const val number ="+61 451120279"
-    const val email1 ="info@ablehandssupportservices.au"
-    const val email2 ="contact@ablehandssupportservices.au"
+    const val email1 ="info@ablehands.com.au"
+    const val email2 ="contact@ablehands.com.au"
 }

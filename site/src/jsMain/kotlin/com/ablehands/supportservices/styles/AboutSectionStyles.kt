@@ -32,7 +32,7 @@ val PhoneNumberStyle by ComponentStyle {
     }
     hover {
         Modifier
-            .transform { scale(1.1f) }
+            .transform { scale(1.05f) }
 
     }
 }
@@ -40,13 +40,13 @@ val PhoneNumberStyle by ComponentStyle {
 val NavigationItemStyle by ComponentStyle {
     base {
         Modifier
-            .color(Theme.Primary.rgb)
+            .color(Theme.Base.rgb)
             .transition(CSSTransition(property = "color", duration = 200.ms))
     }
     anyLink {
-        Modifier.color(Theme.Primary.rgb)
+        Modifier.color(Theme.Base.rgb)
     }
     hover {
-        Modifier.color(Theme.Secondary.rgb)
+        Modifier.color(Theme.Primary.rgb)
     }
 }
