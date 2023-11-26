@@ -27,7 +27,7 @@ import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
-fun AboutSection(onMenuClicked: (Boolean) -> Unit) {
+fun AboutSection() {
 
     val breakpoint = rememberBreakpoint()
     Box(
@@ -92,7 +92,7 @@ fun AboutContentMD() {
 fun AboutContent() {
     Column(
         modifier = Modifier
-            .margin(top=44.px)
+            .margin(top = 44.px)
             .fillMaxWidth(85.percent)
     ) {
         SectionTitle(section = Section.About, modifier = Modifier.padding(left = 32.px))

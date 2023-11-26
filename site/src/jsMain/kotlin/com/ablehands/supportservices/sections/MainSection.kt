@@ -13,6 +13,7 @@ import com.varabyte.kobweb.compose.css.ObjectFit
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
+import com.varabyte.kobweb.compose.foundation.layout.Spacer
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
@@ -35,6 +36,13 @@ fun MainSection(onMenuClicked: (Boolean) -> Unit) {
     val size = remember(breakpoint) {
         if (breakpoint < Breakpoint.MD) 24.px else 54.px
     }
+    val ndisImageSize = remember(breakpoint) {
+        if (breakpoint < Breakpoint.MD) 50 else 100
+    }
+
+    val ndisBottomMargin = remember(breakpoint) {
+        if (breakpoint < Breakpoint.MD) 16.px else if (breakpoint >= Breakpoint.LG) 74.px else 24.px
+    }
     Box(
         modifier = Modifier
             .id(Section.Main.id)
@@ -54,7 +62,10 @@ fun MainSection(onMenuClicked: (Boolean) -> Unit) {
                 contentAlignment = Alignment.Center
             ) {
                 MainBackground()
-                Column(modifier = Modifier.align(Alignment.CenterStart).margin(left = size.value.px)) {
+                Column(
+                    modifier = Modifier.align(Alignment.BottomStart)
+                        .margin(left = size.value.px, bottom = ndisBottomMargin.value.px)
+                ) {
                     H1(
                         attrs = Modifier
                             .fontFamily(Constants.FONT_FAMILY)
@@ -75,12 +86,27 @@ fun MainSection(onMenuClicked: (Boolean) -> Unit) {
                     ) {
                         Text("Your choice.")
                     }
+
+                    Box(
+                        modifier = Modifier.height(if (ndisBottomMargin.value == 74f) 32.px else 0.px)
+                    )
+                    NDISImage(ndisImageSize)
                 }
 
             }
 
         }
     }
+}
+
+@Composable
+fun NDISImage(size: Int) {
+    Image(
+        modifier = Modifier
+            .height(size.px)
+            .objectFit(ObjectFit.Contain),
+        src = Res.Image.ndis,
+    )
 }
 
 @Composable
