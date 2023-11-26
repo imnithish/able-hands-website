@@ -51,7 +51,6 @@ import org.jetbrains.compose.web.dom.Text
 @Composable
 fun ServicestSection() {
 
-    val breakpoint = rememberBreakpoint()
     Box(
         modifier = Modifier
             .id(Section.Services.id)

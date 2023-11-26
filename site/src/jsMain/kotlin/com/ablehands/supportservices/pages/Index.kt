@@ -3,10 +3,7 @@ package com.ablehands.supportservices.pages
 import androidx.compose.runtime.*
 import com.ablehands.supportservices.components.BackToTopButton
 import com.ablehands.supportservices.components.OverflowMenu
-import com.ablehands.supportservices.sections.AboutSection
-import com.ablehands.supportservices.sections.MainSection
-import com.ablehands.supportservices.sections.MissionSection
-import com.ablehands.supportservices.sections.ServicestSection
+import com.ablehands.supportservices.sections.*
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -32,7 +29,8 @@ fun HomePage() {
             AboutSection()
             MissionSection()
             ServicestSection()
-            Box(modifier = Modifier.height(120.px))
+            ContactSection()
+            Box(modifier = Modifier.height(10.px))
         }
         BackToTopButton()
         if (menuOpened) {
