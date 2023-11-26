@@ -63,7 +63,7 @@ fun ServicesContent() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .margin(top = 112.px),
+            .margin(top =  if (breakpoint <= Breakpoint.MD) 24.px else 112.px),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
@@ -138,7 +138,7 @@ fun ServicesContent() {
                     P(
                         attrs = Modifier
                             .textAlign(TextAlign.Start)
-                            .fontFamily(Constants.FONT_FAMILY2)
+                            .fontFamily(Constants.FONT_FAMILY)
                             .fontSize(18.px)
                             .margin(leftRight = 16.px)
                             .fontWeight(FontWeight.SemiBold)
@@ -221,37 +221,29 @@ fun ServicesContent() {
                 Text("Assistance with day-to-day activities at home.")
             }
 
-            homeSupportServices.windowed(2, 2).forEach {
-                it.forEach {
+            homeSupportServices.forEach {
+                val broken = it.split("+")
+                Row(Modifier.flexWrap(FlexWrap.Wrap).padding(leftRight = 32.px).margin(top = 16.px)) {
 
-                    Row {
-                        val broken = it.split("+")
-                        Row(Modifier.flexWrap(FlexWrap.Wrap)) {
+                    SpanText(
+                        modifier = Modifier
+                            .fontFamily(Constants.FONT_FAMILY)
+                            .fontSize(18.px)
+                            .fontWeight(FontWeight.Bold),
+                        text = "${broken[0]}: "
+                    )
 
-                            SpanText(
-                                modifier = Modifier
-                                    .fontFamily(Constants.FONT_FAMILY2)
-                                    .fontSize(18.px)
-                                    .fontWeight(FontWeight.Bold),
-                                text = "${broken[0]}: "
-                            )
-
-                            SpanText(
-                                modifier = Modifier
-                                    .fontFamily(Constants.FONT_FAMILY2)
-                                    .fontSize(18.px)
-                                    .fontWeight(FontWeight.SemiBold),
-                                text = broken[1]
-                            )
-
-                        }
-                    }
+                    SpanText(
+                        modifier = Modifier
+                            .fontFamily(Constants.FONT_FAMILY)
+                            .fontSize(18.px)
+                            .fontWeight(FontWeight.SemiBold),
+                        text = broken[1]
+                    )
 
                 }
-
-
-
             }
+
 
             VerticalSpacer(32f)
 
@@ -278,14 +270,14 @@ fun ServiesText(
     content: List<String>
 ) {
 
-    Column {
+    Column(modifier = Modifier.fillMaxHeight(),   verticalArrangement = Arrangement.Center) {
         content.forEachIndexed { index, s ->
             P(
                 attrs = Modifier
                     .thenIf(index == 0) {
                         Modifier.margin(top = if (breakpoint < Breakpoint.MD) 32.px else 0.px)
                     }
-                    .fontFamily(Constants.FONT_FAMILY2)
+                    .fontFamily(Constants.FONT_FAMILY)
                     .fontSize(18.px)
                     .fontWeight(FontWeight.SemiBold)
                     .toAttrs()

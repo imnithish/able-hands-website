@@ -56,8 +56,9 @@ fun AboutContentMD() {
     Column(
         Modifier
             .fillMaxWidth(90.percent)
+            .margin(top=24.px)
     ) {
-        SectionTitle(section = Section.About)
+        SectionTitle(section = Section.About, fontSize= 24)
         Column(
             modifier = Modifier
                 .margin(top = 6.px)
@@ -76,7 +77,7 @@ fun AboutContentMD() {
                     .fontFamily(Constants.FONT_FAMILY)
                     .margin(top = 12.px)
                     .fontSize(18.px)
-                    .fontWeight(FontWeight.Normal)
+                    .fontWeight(FontWeight.SemiBold)
                     .color(Theme.Base.rgb)
                     .toAttrs()
             ) {
@@ -113,7 +114,7 @@ fun AboutContent() {
             P(
                 attrs = Modifier
                     .weight(1f)
-                    .fontFamily(Constants.FONT_FAMILY2)
+                    .fontFamily(Constants.FONT_FAMILY)
                     .margin(left = 60.px)
                     .fontSize(18.px)
                     .fontWeight(FontWeight.SemiBold)

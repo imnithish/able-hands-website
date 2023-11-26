@@ -27,6 +27,7 @@ fun SectionTitle(
     modifier: Modifier = Modifier,
     section: Section,
     color: CSSColorValue = Theme.Base.rgb,
+    fontSize: Int = 32,
     anim: Boolean = false
 ) {
 
@@ -46,7 +47,7 @@ fun SectionTitle(
     P(
         attrs = modifier
             .fontFamily(FONT_FAMILY2)
-            .fontSize(32.px)
+            .fontSize(fontSize.px)
             .margin(
                 right = if (anim) titleMargin else 0.px,
                 top = 0.px,

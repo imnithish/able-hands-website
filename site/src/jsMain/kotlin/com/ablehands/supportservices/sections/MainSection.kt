@@ -37,7 +37,7 @@ fun MainSection(onMenuClicked: (Boolean) -> Unit) {
         if (breakpoint < Breakpoint.MD) 24.px else 54.px
     }
     val ndisImageSize = remember(breakpoint) {
-        if (breakpoint < Breakpoint.MD) 50 else 100
+        if (breakpoint < Breakpoint.MD) 40 else 100
     }
 
     val ndisBottomMargin = remember(breakpoint) {
@@ -68,9 +68,9 @@ fun MainSection(onMenuClicked: (Boolean) -> Unit) {
                 ) {
                     H1(
                         attrs = Modifier
-                            .fontFamily(Constants.FONT_FAMILY)
+                            .fontFamily(Constants.FONT_FAMILY2)
                             .fontSize(size.value.px)
-                            .fontWeight(FontWeight.SemiBold)
+                            .fontWeight(FontWeight.Bold)
                             .color(Theme.Base.rgb)
                             .toAttrs()
                     ) {
@@ -78,9 +78,9 @@ fun MainSection(onMenuClicked: (Boolean) -> Unit) {
                     }
                     H1(
                         attrs = Modifier
-                            .fontFamily(Constants.FONT_FAMILY)
+                            .fontFamily(Constants.FONT_FAMILY2)
                             .fontSize(size.value.px)
-                            .fontWeight(FontWeight.SemiBold)
+                            .fontWeight(FontWeight.Bold)
                             .color(Theme.Base.rgb)
                             .toAttrs()
                     ) {
