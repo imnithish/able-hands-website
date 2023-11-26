@@ -1,6 +1,7 @@
 package com.ablehands.supportservices.sections
 
 import androidx.compose.runtime.Composable
+import com.ablehands.supportservices.components.PText
 import com.ablehands.supportservices.components.SectionTitle
 import com.ablehands.supportservices.components.VerticalSpacer
 import com.ablehands.supportservices.models.Section
@@ -9,10 +10,17 @@ import com.ablehands.supportservices.util.Constants
 import com.ablehands.supportservices.util.Content
 import com.ablehands.supportservices.util.Content.dailyPerCareAndDomTasksDes
 import com.ablehands.supportservices.util.Content.homeSupportServices
+import com.ablehands.supportservices.util.Content.nursing
+import com.ablehands.supportservices.util.Content.nursingPoints
 import com.ablehands.supportservices.util.Content.silDes
+import com.ablehands.supportservices.util.Content.socialActivitiesAndCommunityAccess
+import com.ablehands.supportservices.util.Content.transportArrangements
 import com.ablehands.supportservices.util.Res
+import com.ablehands.supportservices.util.Res.Image.image11
+import com.ablehands.supportservices.util.Res.Image.image24
 import com.ablehands.supportservices.util.Res.Image.image4
 import com.ablehands.supportservices.util.Res.Image.image5
+import com.ablehands.supportservices.util.Res.Image.image8
 import com.varabyte.kobweb.compose.css.CSSTransition
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.Overflow
@@ -63,7 +71,7 @@ fun ServicesContent() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .margin(top =  if (breakpoint <= Breakpoint.MD) 24.px else 112.px),
+            .margin(top = if (breakpoint <= Breakpoint.MD) 24.px else 112.px),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
@@ -244,6 +252,224 @@ fun ServicesContent() {
                 }
             }
 
+            // Support in social activities and community access
+            Box(modifier = Modifier.fillMaxWidth().background(Color.lightgray).height(2.px).margin(topBottom = 16.px))
+
+            H1(
+                attrs = Modifier
+                    .margin(top = 32.px, leftRight = 32.px)
+                    .textAlign(TextAlign.Center)
+                    .fontFamily(Constants.FONT_FAMILY2)
+                    .fontSize(24.px)
+                    .fontWeight(FontWeight.Black)
+                    .color(Theme.Primary.rgb)
+                    .toAttrs()
+            ) {
+                Text("Support in social activities and community access")
+            }
+
+            H1(
+                attrs = Modifier
+                    .margin(top = 16.px, leftRight = 32.px)
+                    .fontFamily(Constants.FONT_FAMILY2)
+                    .fontSize(28.px)
+                    .textAlign(TextAlign.Center)
+                    .fontWeight(FontWeight.Bold)
+                    .color(Theme.Base.rgb)
+                    .toAttrs()
+            ) {
+                Text("To connect with your community in your own way.")
+            }
+
+            SimpleGrid(
+                modifier = Modifier.fillMaxWidth(
+                    if (breakpoint >= Breakpoint.MD) 80.percent
+                    else 90.percent
+                ).margin(top = 32.px),
+                numColumns = numColumns(base = 1, md = 2),
+            ) {
+                ServiesImage(image24)
+                ServiesText(breakpoint = breakpoint, socialActivitiesAndCommunityAccess)
+            }
+
+            // Assistance with travel and transport arrangements
+            Box(modifier = Modifier.fillMaxWidth().background(Color.lightgray).height(2.px).margin(topBottom = 16.px))
+
+            H1(
+                attrs = Modifier
+                    .margin(top = 32.px, leftRight = 32.px)
+                    .textAlign(TextAlign.Center)
+                    .fontFamily(Constants.FONT_FAMILY2)
+                    .fontSize(24.px)
+                    .fontWeight(FontWeight.Black)
+                    .color(Theme.Primary.rgb)
+                    .toAttrs()
+            ) {
+                Text("Assistance with travel and transport arrangements")
+            }
+
+            H1(
+                attrs = Modifier
+                    .margin(top = 16.px, leftRight = 32.px)
+                    .fontFamily(Constants.FONT_FAMILY2)
+                    .fontSize(28.px)
+                    .textAlign(TextAlign.Center)
+                    .fontWeight(FontWeight.Bold)
+                    .color(Theme.Base.rgb)
+                    .toAttrs()
+            ) {
+                Text("We are here to help you. To maximize your independence and meet your goals.")
+            }
+
+            SimpleGrid(
+                modifier = Modifier.fillMaxWidth(
+                    if (breakpoint >= Breakpoint.MD) 80.percent
+                    else 90.percent
+                ).margin(top = 32.px),
+                numColumns = numColumns(base = 1, md = 2),
+            ) {
+                ServiesImage(image8)
+                ServiesText(breakpoint = breakpoint, transportArrangements)
+            }
+
+
+            // Community Nursing care
+            Box(modifier = Modifier.fillMaxWidth().background(Color.lightgray).height(2.px).margin(topBottom = 16.px))
+
+            H1(
+                attrs = Modifier
+                    .margin(top = 32.px, leftRight = 32.px)
+                    .textAlign(TextAlign.Center)
+                    .fontFamily(Constants.FONT_FAMILY2)
+                    .fontSize(24.px)
+                    .fontWeight(FontWeight.Black)
+                    .color(Theme.Primary.rgb)
+                    .toAttrs()
+            ) {
+                Text("Community Nursing care")
+            }
+
+            H1(
+                attrs = Modifier
+                    .margin(top = 16.px, leftRight = 32.px)
+                    .fontFamily(Constants.FONT_FAMILY2)
+                    .fontSize(28.px)
+                    .textAlign(TextAlign.Center)
+                    .fontWeight(FontWeight.Bold)
+                    .color(Theme.Base.rgb)
+                    .toAttrs()
+            ) {
+                Text("Professional community nursing in your own home.")
+            }
+
+            SimpleGrid(
+                modifier = Modifier.fillMaxWidth(
+                    if (breakpoint >= Breakpoint.MD) 80.percent
+                    else 90.percent
+                ).margin(top = 32.px),
+                numColumns = numColumns(base = 1, md = 2),
+            ) {
+                ServiesImage(image11)
+                ServiesText(breakpoint = breakpoint, nursing)
+            }
+
+            VerticalSpacer(32f)
+
+            H1(
+                attrs = Modifier
+                    .fontFamily(Constants.FONT_FAMILY2)
+                    .fontSize(20.px)
+                    .margin(leftRight = 32.px)
+                    .textAlign(TextAlign.Center)
+                    .fontWeight(FontWeight.Bold)
+                    .color(Theme.Primary.rgb)
+                    .toAttrs()
+            ) {
+                Text("Our nursing services are offered by experienced Registered Nurses")
+            }
+
+            H1(
+                attrs = Modifier
+                    .fontFamily(Constants.FONT_FAMILY)
+                    .margin(leftRight = 32.px)
+                    .textAlign(TextAlign.Center)
+                    .fontSize(18.px)
+                    .fontWeight(FontWeight.SemiBold)
+                    .color(Theme.Base.rgb)
+                    .toAttrs()
+            ) {
+                Text("Various nursing assessments and planning which includes:")
+            }
+
+            SimpleGrid(
+                modifier = Modifier.fillMaxWidth(
+                    if (breakpoint >= Breakpoint.MD) 80.percent
+                    else 90.percent
+                ).margin(top = 32.px),
+                numColumns = numColumns(base = 1, md = 2),
+            ) {
+
+                nursingPoints.forEach {
+                    PText(it)
+                }
+            }
+
+            // Community Nursing care
+            Box(modifier = Modifier.fillMaxWidth().background(Color.lightgray).height(2.px).margin(topBottom = 16.px))
+
+
+            H1(
+                attrs = Modifier
+                    .margin(top = 32.px, leftRight = 32.px)
+                    .textAlign(TextAlign.Center)
+                    .fontFamily(Constants.FONT_FAMILY2)
+                    .fontSize(20.px)
+                    .fontWeight(FontWeight.SemiBold)
+                    .color(Theme.Base.rgb)
+                    .toAttrs()
+            ) {
+                Text("If you have been involved in an accident, suffered an injury or have been in hospital for an illness, you may need some support at home for a period of time whilst you get back on your fee.")
+            }
+
+            H1(
+                attrs = Modifier
+                    .margin(top = 12.px, leftRight = 32.px)
+                    .textAlign(TextAlign.Center)
+                    .fontFamily(Constants.FONT_FAMILY2)
+                    .fontSize(20.px)
+                    .fontWeight(FontWeight.SemiBold)
+                    .color(Theme.Base.rgb)
+                    .toAttrs()
+            ) {
+                Text("We work with a number of healthcare providers to support their clients or patients to get back on the road to recovery as quickly as possible.")
+            }
+
+            H1(
+                attrs = Modifier
+                    .margin(top = 12.px, leftRight = 32.px)
+                    .textAlign(TextAlign.Center)
+                    .fontFamily(Constants.FONT_FAMILY2)
+                    .fontSize(24.px)
+                    .fontWeight(FontWeight.Black)
+                    .color(Theme.Primary.rgb)
+                    .toAttrs()
+            ) {
+                Text("Our support services are tailored to you.")
+            }
+
+            H1(
+                attrs = Modifier
+                    .margin(top = 12.px, leftRight = 32.px)
+                    .textAlign(TextAlign.Center)
+                    .fontFamily(Constants.FONT_FAMILY2)
+                    .fontSize(20.px)
+                    .fontWeight(FontWeight.SemiBold)
+                    .color(Theme.Base.rgb)
+                    .toAttrs()
+            ) {
+                Text("If you need help transitioning from the hospital to your home, you may need to access our short-term support services. From help with cleaning your home to attending appointments, we can support you.")
+            }
+
 
             VerticalSpacer(32f)
 
@@ -270,13 +496,12 @@ fun ServiesText(
     content: List<String>
 ) {
 
-    Column(modifier = Modifier.fillMaxHeight(),   verticalArrangement = Arrangement.Center) {
-        content.forEachIndexed { index, s ->
+    Column(modifier = Modifier.fillMaxHeight().thenIf(breakpoint < Breakpoint.MD) {
+        Modifier.margin(top = 32.px)
+    }, verticalArrangement = Arrangement.Center) {
+        content.forEachIndexed { _, s ->
             P(
                 attrs = Modifier
-                    .thenIf(index == 0) {
-                        Modifier.margin(top = if (breakpoint < Breakpoint.MD) 32.px else 0.px)
-                    }
                     .fontFamily(Constants.FONT_FAMILY)
                     .fontSize(18.px)
                     .fontWeight(FontWeight.SemiBold)

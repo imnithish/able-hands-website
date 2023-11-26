@@ -47,7 +47,7 @@ fun BackToTopButton() {
         horizontalAlignment = Alignment.End
     ) {
         Box(
-            modifier = BackToTopButtonStyle.toModifier()
+            modifier = Modifier
                 .size(50.px)
                 .visibility(
                     if (scroll != null && scroll!! > 400.0) Visibility.Visible

@@ -18,6 +18,9 @@ object Res {
         const val ndis = "ndis.png"
         const val image5 = "image5.jpg"
         const val image4 = "image4.jpg"
+        const val image24 = "image24.png"
+        const val image8 = "image8.jpg"
+        const val image11 = "image11.jpg"
     }
 }
 
@@ -60,5 +63,36 @@ object Content {
         "Domestic services+We can assist you with light domestic cleaning, laundry and changing bedsheets.",
         "Personal care+We can assist you with showering, toileting, dressing, personal grooming, and mobility support such as hoist transfers and getting in and out of bed.",
         "Sleepover support+Our trained staff can stay in your home to provide the support you may require overnight.",
+    )
+
+    val socialActivitiesAndCommunityAccess = listOf(
+        "⦁ Support with individual life skills development and training, including catching public transport.",
+        "⦁ Developing skills for community support in attending social and recreational participation.",
+        "⦁ Train participants in groups to increase their independence in daily personal activities.",
+        "⦁ Provide support and assistance with shopping, appointments, and leisure activities."
+    )
+
+    val transportArrangements = listOf(
+        "We offer diverse care-assisted transport arrangements to cater to your needs, including medical appointments and community care transfers. You can feel secure knowing your loved ones are safe with us.",
+        "Transportation support services, including:",
+        "⦁\tAttending the medical hospital and GP appointments",
+        "⦁\tAssistance with shopping and groceries",
+        "⦁\tAttending social activities in the community",
+    )
+
+    val nursing = listOf(
+        "Whether recovering from an injury or illness or having a long-term condition, our nursing services give you the clinical nursing care you need to support your health and well-being.   We can provide next-day services in Brisbane and surrounding areas. If you require same-day or on-call nursing, please contact us to discuss your needs.",
+        "Some care services can only be provided by Registered Nurses. If you have an injury/illness post-discharge from the hospital, which requires regular clinical attention, then in-home nursing care is the perfect way to rest and recover."
+    )
+
+    val nursingPoints = listOf(
+        "⦁\tWound care and complex wound care.",
+        "⦁\tStitch and staples removal.",
+        "⦁\tCatheter care, including Indwelling and suprapubic catheter.",
+        "⦁\tContinence assessment, education, reporting and management",
+        "⦁\tPEG feeding, enteral feeding and nasogastric feeding.",
+        "⦁\tPEG feeding, enteral feeding and nasogastric feeding.",
+        "⦁\tMedication management, including oral, PR and injections.",
+        "⦁\tRecovery support: Helping you regain your feet after an injury, illness or surgery. Receive short-term support while you recover from an illness or injury. "
     )
 }
