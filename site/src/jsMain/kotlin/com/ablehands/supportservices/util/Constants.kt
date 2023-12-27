@@ -2,7 +2,7 @@ package com.ablehands.supportservices.util
 
 object Constants {
     const val SECTION_WIDTH = 1920
-    const val FONT_FAMILY = "DM Sans"
+    const val FONT_FAMILY = "Montserrat"
     const val FONT_FAMILY2 = "Raleway"
 }
 
@@ -35,11 +35,11 @@ object Content {
         "Empowerment, Dignity, Respect, Trust, integrity and Innovation."
     )
 
-    const val number ="+61 451120279"
-    const val email1 ="info@ablehands.com.au"
-    const val email2 ="contact@ablehands.com.au"
+    const val number = "+61 451120279"
+    const val email1 = "info@ablehands.com.au"
+    const val email2 = "contact@ablehands.com.au"
 
-    val silProvide= listOf(
+    val silProvide = listOf(
         "⦁ 24/7 support with experienced support workers/registered nurses.",
         "⦁ Medication management and administration.",
         "⦁ Help with personal care activities.",
@@ -53,7 +53,7 @@ object Content {
         "AHSS provides participants with higher support needs, such as overnight support, 24/7 care, person-to-person work provided by a support worker, or significant help throughout the day. We provide help and supervision of day-to-day tasks to develop the skills of an individual so they can live as independently as possible. These are supports provided to an NDIS participant in their home and can be in a shared or individual living arrangement."
     )
 
-    val dailyPerCareAndDomTasksDes= listOf(
+    val dailyPerCareAndDomTasksDes = listOf(
         "Able Hands Support Services provides home-based care services for people who live with disabilities. We take pride in delivering you a choice of services and support to suit your needs and goals. Our dedicated, experienced, friendly staff will assist you with all aspects of daily living, personal care and home tasks."
     )
 
@@ -94,5 +94,10 @@ object Content {
         "⦁\tPEG feeding, enteral feeding and nasogastric feeding.",
         "⦁\tMedication management, including oral, PR and injections.",
         "⦁\tRecovery support: Helping you regain your feet after an injury, illness or surgery. Receive short-term support while you recover from an illness or injury. "
+    )
+
+    val servicesExpanded = listOf(
+        Pair("sil", "Supported Independent Living (SIL)"),
+        Pair("daily_personal_care_and_domestic_tasks", "Daily personal care and domestic tasks"),
     )
 }

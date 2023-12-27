@@ -7,10 +7,9 @@ import com.ablehands.supportservices.styles.LogoStyle
 import com.ablehands.supportservices.styles.NavigationItemStyle
 import com.ablehands.supportservices.styles.PhoneNumberStyle
 import com.ablehands.supportservices.util.Constants.FONT_FAMILY
-import com.ablehands.supportservices.util.Constants.FONT_FAMILY2
 import com.ablehands.supportservices.util.Content
+import com.ablehands.supportservices.util.Content.servicesExpanded
 import com.ablehands.supportservices.util.Res
-import com.varabyte.kobweb.compose.css.CSSColor
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextDecorationLine
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -19,11 +18,13 @@ import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.graphics.Image
-import com.varabyte.kobweb.silk.components.icons.fa.*
+import com.varabyte.kobweb.silk.components.icons.fa.FaBars
+import com.varabyte.kobweb.silk.components.icons.fa.FaEnvelope
+import com.varabyte.kobweb.silk.components.icons.fa.FaPhone
+import com.varabyte.kobweb.silk.components.icons.fa.IconSize
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.toModifier
@@ -99,7 +100,7 @@ fun RightSide() {
                 attrs = Modifier
                     .fontFamily(FONT_FAMILY)
                     .fontSize(22.px)
-                    .fontWeight(FontWeight.Black)
+                    .fontWeight(FontWeight.Medium)
                     .color(Theme.Base.rgb)
                     .toAttrs()
             ) {
@@ -118,7 +119,7 @@ fun RightSide() {
                 attrs = Modifier
                     .fontFamily(FONT_FAMILY)
                     .fontSize(18.px)
-                    .fontWeight(FontWeight.Black)
+                    .fontWeight(FontWeight.Medium)
                     .color(Theme.Base.rgb)
                     .toAttrs()
             ) {
@@ -137,7 +138,7 @@ fun RightSide() {
                 attrs = Modifier
                     .fontFamily(FONT_FAMILY)
                     .fontSize(18.px)
-                    .fontWeight(FontWeight.Black)
+                    .fontWeight(FontWeight.Medium)
                     .color(Theme.Base.rgb)
                     .toAttrs()
             ) {
@@ -150,18 +151,22 @@ fun RightSide() {
             modifier = Modifier
                 .fillMaxWidth().margin(top = 20.px),
         ) {
-            Section.entries.filterNot { it.id=="main" }.forEachIndexed { index, section ->
+            Section.entries.filterNot { it.id == "main" }.forEachIndexed { index, section ->
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Link(
-                        modifier = NavigationItemStyle.toModifier()
-                            .fontFamily(FONT_FAMILY2)
-                            .fontSize(18.px)
-                            .fontWeight(FontWeight.Bolder)
-                            .margin(right = if (index == 3) 0.px else 18.px)
-                            .textDecorationLine(TextDecorationLine.None),
-                        path = section.path,
-                        text = section.titleVariant
-                    )
+
+                    if (section.id == "services") {
+                        ServicesNavBarItem(mainText = section.titleVariant, href = section.path, servicesExpanded)
+                    } else
+                        Link(
+                            modifier = NavigationItemStyle.toModifier()
+                                .fontFamily(FONT_FAMILY)
+                                .fontSize(18.px)
+                                .fontWeight(FontWeight.Bold)
+                                .margin(right = if (index == 3) 0.px else 18.px)
+                                .textDecorationLine(TextDecorationLine.None),
+                            path = section.path,
+                            text = section.titleVariant
+                        )
                 }
 
             }

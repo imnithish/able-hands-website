@@ -33,7 +33,7 @@ enum class Section(
     Contact(
         id = "contact",
         title = "Contact",
-        titleVariant = "Connect with us!",
+        titleVariant = "Connect with us",
         path = "#contact"
     )
 }
