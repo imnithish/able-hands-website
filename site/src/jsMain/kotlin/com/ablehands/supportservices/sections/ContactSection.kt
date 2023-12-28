@@ -73,11 +73,139 @@ fun ContactContent() {
 
         Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
             ContactForm(Modifier.weight(1f))
-            Box (modifier = Modifier.width(48.px)){  }
+            Box(modifier = Modifier.width(48.px)) { }
             ContactContentRight(Modifier.weight(1f))
         }
 
-        VerticalSpacer(54f)
+        VerticalSpacer(32f)
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+
+            NDISImage(100)
+
+            Column {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    FaLocationDot(
+                        modifier = Modifier.color(Theme.Base.rgb).margin(bottom = 10.px, right = 6.px),
+                        size = IconSize.SM
+                    )
+
+                    H1(
+                        attrs = Modifier
+                            .fontFamily(Constants.FONT_FAMILY)
+                            .fontSize(18.px)
+                            .fontWeight(FontWeight.Medium)
+                            .color(Theme.Base.rgb)
+                            .toAttrs()
+                    ) {
+                        Text("30 Ingham Street, Capalaba QLD 4157")
+                    }
+
+                }
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    FaPhone(
+                        modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 10.px, right = 8.px),
+                        size = IconSize.SM
+                    )
+                    H1(
+                        attrs = Modifier
+                            .fontFamily(Constants.FONT_FAMILY)
+                            .fontSize(18.px)
+                            .fontWeight(FontWeight.Medium)
+                            .color(Theme.Base.rgb)
+                            .toAttrs()
+                    ) {
+                        Text(Content.number)
+                    }
+                }
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    FaEnvelope(
+                        modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 4.px, right = 6.px),
+                        size = IconSize.SM
+                    )
+                    H1(
+                        attrs = Modifier
+                            .fontFamily(Constants.FONT_FAMILY)
+                            .fontSize(18.px)
+                            .fontWeight(FontWeight.Medium)
+                            .color(Theme.Base.rgb)
+                            .toAttrs()
+                    ) {
+                        Text(Content.email1)
+                    }
+                }
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    FaEnvelope(
+                        modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 4.px, right = 6.px),
+                        size = IconSize.SM
+                    )
+                    H1(
+                        attrs = Modifier
+                            .fontFamily(Constants.FONT_FAMILY)
+                            .fontSize(18.px)
+                            .fontWeight(FontWeight.Medium)
+                            .color(Theme.Base.rgb)
+                            .toAttrs()
+                    ) {
+                        Text(Content.email2)
+                    }
+                }
+
+
+                VerticalSpacer(8f)
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+
+                    Link(
+                        path = "https://github.com/imnithish",
+                        openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB
+                    ) {
+                        FaFacebook(
+                            modifier = SocialLinkStyle.toModifier(),
+                            size = IconSize.LG
+                        )
+                    }
+                    Box(modifier = Modifier.width(6.px))
+                    Link(
+                        path = "https://github.com/imnithish",
+                        openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB
+                    ) {
+                        FaInstagram(
+                            modifier = SocialLinkStyle.toModifier(),
+                            size = IconSize.LG
+                        )
+                    }
+                    Box(modifier = Modifier.width(6.px))
+
+                    Link(
+                        path = "https://github.com/imnithish",
+                        openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB
+                    ) {
+                        FaTwitter(
+                            modifier = SocialLinkStyle.toModifier(),
+                            size = IconSize.LG
+                        )
+                    }
+                }
+            }
+
+        }
+
+        VerticalSpacer(74f)
         P(
             attrs = Modifier
                 .fontFamily(Constants.FONT_FAMILY)
@@ -110,123 +238,5 @@ fun ContactContentRight(
                 attr("src", "https://maps.google.com/maps?q=-27.524840, 153.209890&output=embed")
             }
         )
-
-        VerticalSpacer(32f)
-
-        Column {
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                FaLocationDot(
-                    modifier = Modifier.color(Theme.Base.rgb).margin(bottom = 10.px, right = 6.px),
-                    size = IconSize.SM
-                )
-
-                H1(
-                    attrs = Modifier
-                        .fontFamily(Constants.FONT_FAMILY)
-                        .fontSize(18.px)
-                        .fontWeight(FontWeight.Medium)
-                        .color(Theme.Base.rgb)
-                        .toAttrs()
-                ) {
-                    Text("30 Ingham Street, Capalaba QLD 4157")
-                }
-
-            }
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                FaPhone(
-                    modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 10.px, right = 8.px),
-                    size = IconSize.SM
-                )
-                H1(
-                    attrs = Modifier
-                        .fontFamily(Constants.FONT_FAMILY)
-                        .fontSize(18.px)
-                        .fontWeight(FontWeight.Medium)
-                        .color(Theme.Base.rgb)
-                        .toAttrs()
-                ) {
-                    Text(Content.number)
-                }
-            }
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                FaEnvelope(
-                    modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 4.px, right = 6.px),
-                    size = IconSize.SM
-                )
-                H1(
-                    attrs = Modifier
-                        .fontFamily(Constants.FONT_FAMILY)
-                        .fontSize(18.px)
-                        .fontWeight(FontWeight.Medium)
-                        .color(Theme.Base.rgb)
-                        .toAttrs()
-                ) {
-                    Text(Content.email1)
-                }
-            }
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                FaEnvelope(
-                    modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 4.px, right = 6.px),
-                    size = IconSize.SM
-                )
-                H1(
-                    attrs = Modifier
-                        .fontFamily(Constants.FONT_FAMILY)
-                        .fontSize(18.px)
-                        .fontWeight(FontWeight.Medium)
-                        .color(Theme.Base.rgb)
-                        .toAttrs()
-                ) {
-                    Text(Content.email2)
-                }
-            }
-
-
-            VerticalSpacer(8f)
-
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-
-                Link(
-                    path = "https://github.com/imnithish",
-                    openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB
-                ) {
-                    FaFacebook(
-                        modifier = SocialLinkStyle.toModifier(),
-                        size = IconSize.LG
-                    )
-                }
-                Box(modifier = Modifier.width(6.px))
-                Link(
-                    path = "https://github.com/imnithish",
-                    openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB
-                ) {
-                    FaInstagram(
-                        modifier = SocialLinkStyle.toModifier(),
-                        size = IconSize.LG
-                    )
-                }
-                Box(modifier = Modifier.width(6.px))
-
-                Link(
-                    path = "https://github.com/imnithish",
-                    openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB
-                ) {
-                    FaTwitter(
-                        modifier = SocialLinkStyle.toModifier(),
-                        size = IconSize.LG
-                    )
-                }
-            }
-        }
     }
 }

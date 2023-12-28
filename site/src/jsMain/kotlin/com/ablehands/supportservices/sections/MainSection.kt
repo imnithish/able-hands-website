@@ -87,7 +87,6 @@ fun MainSection(onMenuClicked: (Boolean) -> Unit) {
                     Box(
                         modifier = Modifier.height(if (ndisBottomMargin.value == 74f) 32.px else 0.px)
                     )
-                    NDISImage(ndisImageSize)
                 }
 
             }
