@@ -2,6 +2,7 @@ package com.ablehands.supportservices.sections
 
 import androidx.compose.runtime.Composable
 import com.ablehands.supportservices.components.SectionTitle
+import com.ablehands.supportservices.components.VerticalSpacer
 import com.ablehands.supportservices.models.Section
 import com.ablehands.supportservices.models.Theme
 import com.ablehands.supportservices.util.Constants
@@ -165,31 +166,32 @@ fun MissionContentMD() {
 fun MissionContent() {
     Column(
         modifier = Modifier
-            .margin(top = 112.px)
+            .margin(top = 40.px)
             .fillMaxWidth(85.percent),
         horizontalAlignment = Alignment.End
     ) {
-        SectionTitle(
-            section = Section.Mission,
-            anim = false,
-            modifier = Modifier.padding(right = 32.px)
-        )
         Row(
             modifier = Modifier
-                .fillMaxWidth()
-                .margin(top = 32.px)
-                .backgroundColor(Theme.LightBlue.rgb).borderRadius(8.px)
+                .fillMaxWidth().borderRadius(8.px)
                 .padding(12.px),
             verticalAlignment = Alignment.CenterVertically
         ) {
 
             Column {
+                SectionTitle(
+                    section = Section.Mission,
+                    anim = false,
+                    modifier = Modifier.padding(right = 32.px)
+                )
+
+                VerticalSpacer(16f)
+
                 P(
                     attrs = Modifier
                         .weight(2f)
                         .fontFamily(Constants.FONT_FAMILY)
-                        .fontSize(18.px)
-                        .fontWeight(FontWeight.SemiBold)
+                        .fontSize(16.px)
+                        .fontWeight(FontWeight.Medium)
                         .color(Theme.Base.rgb)
                         .toAttrs()
                 ) {
@@ -199,8 +201,8 @@ fun MissionContent() {
                     attrs = Modifier
                         .weight(2f)
                         .fontFamily(Constants.FONT_FAMILY)
-                        .fontSize(18.px)
-                        .fontWeight(FontWeight.SemiBold)
+                        .fontSize(16.px)
+                        .fontWeight(FontWeight.Medium)
                         .color(Theme.Base.rgb)
                         .toAttrs()
                 ) {
@@ -210,8 +212,8 @@ fun MissionContent() {
                     attrs = Modifier
                         .weight(2f)
                         .fontFamily(Constants.FONT_FAMILY)
-                        .fontSize(18.px)
-                        .fontWeight(FontWeight.SemiBold)
+                        .fontSize(16.px)
+                        .fontWeight(FontWeight.Medium)
                         .color(Theme.Base.rgb)
                         .toAttrs()
                 ) {
@@ -221,10 +223,10 @@ fun MissionContent() {
                 H1(
                     attrs = Modifier
                         .weight(2f)
-                        .fontFamily(Constants.FONT_FAMILY2)
-                        .fontSize(20.px)
-                        .fontWeight(FontWeight.Bold)
-                        .color(Theme.Primary.rgb)
+                        .fontFamily(Constants.FONT_FAMILY)
+                        .fontSize(18.px)
+                        .fontWeight(FontWeight.SemiBold)
+                        .color(Theme.Base.rgb)
                         .toAttrs()
                 ) {
                     Text("Our Vision")
@@ -234,8 +236,8 @@ fun MissionContent() {
                     attrs = Modifier
                         .weight(2f)
                         .fontFamily(Constants.FONT_FAMILY)
-                        .fontSize(18.px)
-                        .fontWeight(FontWeight.SemiBold)
+                        .fontSize(16.px)
+                        .fontWeight(FontWeight.Medium)
                         .color(Theme.Base.rgb)
                         .toAttrs()
                 ) {
@@ -245,10 +247,10 @@ fun MissionContent() {
                 H1(
                     attrs = Modifier
                         .weight(2f)
-                        .fontFamily(Constants.FONT_FAMILY2)
-                        .fontSize(20.px)
-                        .fontWeight(FontWeight.Bold)
-                        .color(Theme.Primary.rgb)
+                        .fontFamily(Constants.FONT_FAMILY)
+                        .fontSize(18.px)
+                        .fontWeight(FontWeight.SemiBold)
+                        .color(Theme.Base.rgb)
                         .toAttrs()
                 ) {
                     Text("Our Values")
@@ -258,8 +260,8 @@ fun MissionContent() {
                     attrs = Modifier
                         .weight(2f)
                         .fontFamily(Constants.FONT_FAMILY)
-                        .fontSize(18.px)
-                        .fontWeight(FontWeight.SemiBold)
+                        .fontSize(16.px)
+                        .fontWeight(FontWeight.Medium)
                         .color(Theme.Base.rgb)
                         .toAttrs()
                 ) {
@@ -269,7 +271,7 @@ fun MissionContent() {
 
 
             Image(
-                modifier = Modifier.borderRadius(8.px).scale(1.2f).margin(left = 60.px),
+                modifier = Modifier.borderRadius(8.px).margin(left = 60.px),
                 src = Res.Image.mission,
                 width = 512,
                 height = 341

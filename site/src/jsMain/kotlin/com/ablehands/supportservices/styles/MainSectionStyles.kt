@@ -18,7 +18,7 @@ val NavItemStyle by ComponentStyle {
             .color(Theme.Base.rgb)
             .fontFamily(Constants.FONT_FAMILY)
             .fontSize(18.px)
-            .fontWeight(FontWeight.Bold)
+            .fontWeight(FontWeight.SemiBold)
             .textDecorationLine(TextDecorationLine.None)
             .transition(CSSTransition(property = "color", duration = 200.ms))
     }

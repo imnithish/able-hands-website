@@ -2,11 +2,15 @@ package com.ablehands.supportservices.sections
 
 import androidx.compose.runtime.Composable
 import com.ablehands.supportservices.components.SectionTitle
+import com.ablehands.supportservices.components.VerticalSpacer
 import com.ablehands.supportservices.models.Section
 import com.ablehands.supportservices.models.Theme
 import com.ablehands.supportservices.util.Constants
 import com.ablehands.supportservices.util.Constants.SECTION_WIDTH
-import com.ablehands.supportservices.util.Content.about_us
+import com.ablehands.supportservices.util.Content.about_us_1
+import com.ablehands.supportservices.util.Content.about_us_2
+import com.ablehands.supportservices.util.Content.about_us_3
+import com.ablehands.supportservices.util.Content.about_us_4
 import com.ablehands.supportservices.util.Res
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.ObjectFit
@@ -56,9 +60,9 @@ fun AboutContentMD() {
     Column(
         Modifier
             .fillMaxWidth(90.percent)
-            .margin(top=24.px)
+            .margin(top = 24.px)
     ) {
-        SectionTitle(section = Section.About, fontSize= 24)
+        SectionTitle(section = Section.About, fontSize = 24)
         Column(
             modifier = Modifier
                 .margin(top = 6.px)
@@ -81,7 +85,7 @@ fun AboutContentMD() {
                     .color(Theme.Base.rgb)
                     .toAttrs()
             ) {
-                Text(about_us)
+                Text(about_us_1)
             }
         }
 
@@ -93,36 +97,39 @@ fun AboutContentMD() {
 fun AboutContent() {
     Column(
         modifier = Modifier
-            .margin(top = 44.px)
+            .margin(top = 40.px)
             .fillMaxWidth(85.percent)
     ) {
-        SectionTitle(section = Section.About, modifier = Modifier.padding(left = 32.px))
         Row(
             modifier = Modifier
-                .fillMaxWidth()
-                .margin(top = 32.px)
-                .backgroundColor(Theme.LightBlue.rgb).borderRadius(8.px)
+                .fillMaxWidth().borderRadius(8.px)
                 .padding(12.px),
             verticalAlignment = Alignment.CenterVertically
         ) {
 
             Image(
-                modifier = Modifier.borderRadius(8.px).weight(1f).scale(1.2f),
+                modifier = Modifier.borderRadius(8.px).weight(1f),
                 src = Res.Image.unnamed
             )
 
-            P(
-                attrs = Modifier
-                    .weight(1f)
-                    .fontFamily(Constants.FONT_FAMILY)
-                    .margin(left = 60.px)
-                    .fontSize(18.px)
-                    .fontWeight(FontWeight.SemiBold)
-                    .color(Theme.Base.rgb)
-                    .toAttrs()
-            ) {
-                Text(about_us)
+            Column(modifier = Modifier.weight(1f).margin(left = 60.px)) {
+
+                SectionTitle(section = Section.About, )
+                VerticalSpacer(16f)
+                listOf(about_us_1, about_us_2, about_us_3, about_us_4).forEach {
+                    P(
+                        attrs = Modifier
+                            .fontFamily(Constants.FONT_FAMILY)
+                            .fontSize(16.px)
+                            .fontWeight(FontWeight.Medium)
+                            .color(Theme.Base.rgb)
+                            .toAttrs()
+                    ) {
+                        Text(it)
+                    }
+                }
             }
+
         }
     }
 }

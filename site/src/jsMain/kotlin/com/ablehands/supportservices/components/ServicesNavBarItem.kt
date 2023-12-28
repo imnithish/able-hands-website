@@ -90,7 +90,7 @@ fun ServicesDropdown(servicesExpanded: List<Pair<String, String>>) {
                         .fontFamily(Constants.FONT_FAMILY)
                         .fontSize(16.px)
                         .padding(top=8.px)
-                        .fontWeight(FontWeight.Bold)
+                        .fontWeight(FontWeight.SemiBold)
                         .textDecorationLine(TextDecorationLine.None),
                     path = "#${service.first}",
                     text = service.second

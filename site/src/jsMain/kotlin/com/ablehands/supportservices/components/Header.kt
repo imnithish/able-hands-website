@@ -161,7 +161,7 @@ fun RightSide() {
                             modifier = NavigationItemStyle.toModifier()
                                 .fontFamily(FONT_FAMILY)
                                 .fontSize(18.px)
-                                .fontWeight(FontWeight.Bold)
+                                .fontWeight(FontWeight.SemiBold)
                                 .margin(right = if (index == 3) 0.px else 18.px)
                                 .textDecorationLine(TextDecorationLine.None),
                             path = section.path,
