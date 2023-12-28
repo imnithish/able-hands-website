@@ -48,10 +48,7 @@ fun Header(onMenuClicked: (Boolean) -> Unit) {
         if (breakpoint <= Breakpoint.MD)
             LogoSideMD(onMenuClicked = onMenuClicked)
         else
-            LogoSide()
-        if (breakpoint > Breakpoint.MD) {
-            RightSide()
-        }
+            Header()
     }
 }
 
@@ -173,4 +170,103 @@ fun RightSide() {
         }
     }
 
+}
+
+
+@Composable
+fun Header() {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween,
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            LogoSide()
+            Row(
+                modifier = Modifier.margin(leftRight = 32.px),
+            ) {
+                Section.entries.filterNot { it.id == "main" }.forEachIndexed { index, section ->
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+
+                        if (section.id == "services") {
+                            ServicesNavBarItem(mainText = section.titleVariant, href = section.path, servicesExpanded)
+                        } else
+                            Link(
+                                modifier = NavigationItemStyle.toModifier()
+                                    .fontFamily(FONT_FAMILY)
+                                    .fontSize(18.px)
+                                    .fontWeight(FontWeight.SemiBold)
+                                    .margin(right = if (index == 3) 0.px else 18.px)
+                                    .textDecorationLine(TextDecorationLine.None),
+                                path = section.path,
+                                text = section.titleVariant
+                            )
+                    }
+
+                }
+            }
+        }
+        Column {
+
+            Row(
+                modifier = PhoneNumberStyle.toModifier(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                FaEnvelope(
+                    modifier = Modifier.color(Theme.Base.rgb).margin(bottom = 4.px, right = 6.px),
+                    size = IconSize.SM
+                )
+                H1(
+                    attrs = Modifier
+                        .fontFamily(FONT_FAMILY)
+                        .fontSize(18.px)
+                        .fontWeight(FontWeight.Medium)
+                        .color(Theme.Base.rgb)
+                        .toAttrs()
+                ) {
+                    Text(Content.email1)
+                }
+            }
+            Row(
+                modifier = PhoneNumberStyle.toModifier(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                FaEnvelope(
+                    modifier = Modifier.color(Theme.Base.rgb).margin(bottom = 4.px, right = 6.px),
+                    size = IconSize.SM
+                )
+                H1(
+                    attrs = Modifier
+                        .fontFamily(FONT_FAMILY)
+                        .fontSize(18.px)
+                        .fontWeight(FontWeight.Medium)
+                        .color(Theme.Base.rgb)
+                        .toAttrs()
+                ) {
+                    Text(Content.email2)
+                }
+            }
+            Row(
+                modifier = PhoneNumberStyle.toModifier(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                FaPhone(
+                    modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 10.px, right = 8.px),
+                    size = IconSize.SM
+                )
+                H1(
+                    attrs = Modifier
+                        .fontFamily(FONT_FAMILY)
+                        .fontSize(18.px)
+                        .fontWeight(FontWeight.Medium)
+                        .color(Theme.Base.rgb)
+                        .toAttrs()
+                ) {
+                    Text(Content.number)
+                }
+            }
+        }
+    }
 }

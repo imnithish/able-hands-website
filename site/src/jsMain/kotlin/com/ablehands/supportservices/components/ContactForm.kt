@@ -7,31 +7,47 @@ import com.ablehands.supportservices.styles.MainButtonStyle
 import com.ablehands.supportservices.util.Constants.FONT_FAMILY
 import com.varabyte.kobweb.compose.css.Cursor
 import com.varabyte.kobweb.compose.css.FontWeight
-import com.varabyte.kobweb.compose.foundation.layout.Arrangement
+import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
-import com.varabyte.kobweb.compose.style.KobwebComposeStyleSheet.attr
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.attrsModifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
-import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.toModifier
 import org.jetbrains.compose.web.attributes.InputType
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.*
 
 @Composable
-fun ContactForm(breakpoint: Breakpoint) {
+fun ContactForm(
+    modifier: Modifier
+) {
     Column(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
+        H1(
+            attrs = Modifier
+                .fontFamily(FONT_FAMILY)
+                .fontSize(20.px)
+                .fillMaxWidth()
+                .textAlign(TextAlign.Start)
+                .fontWeight(FontWeight.SemiBold)
+                .color(Theme.Base.rgb)
+                .toAttrs()
+        ) {
+            Text("Write to us ✍\uFE0F")
+        }
+
+        VerticalSpacer(12f)
+
         Form(
             action = "https://formspree.io/f/xzbllejd",
             attrs = Modifier
+                .fillMaxWidth()
                 .attrsModifier {
                     attr("method", "POST")
                 }
@@ -41,7 +57,7 @@ fun ContactForm(breakpoint: Breakpoint) {
                 attrs = Modifier
                     .classNames("form-label")
                     .fontFamily(FONT_FAMILY)
-                    .fontWeight(FontWeight.SemiBold)
+                    .fontWeight(FontWeight.Medium)
                     .toAttrs(),
                 forId = "inputName"
             ) {
@@ -54,11 +70,8 @@ fun ContactForm(breakpoint: Breakpoint) {
                     .classNames("form-control")
                     .margin(bottom = 10.px)
                     .fontFamily(FONT_FAMILY)
-                    .fontWeight(FontWeight.SemiBold)
-                    .width(
-                        if (breakpoint >= Breakpoint.MD) 500.px
-                        else 250.px
-                    )
+                    .fontWeight(FontWeight.Medium)
+
                     .backgroundColor(Theme.LighterGray.rgb)
                     .boxShadow(0.px, 0.px, 0.px, 0.px, null)
                     .attrsModifier {
@@ -72,7 +85,7 @@ fun ContactForm(breakpoint: Breakpoint) {
                 attrs = Modifier
                     .classNames("form-label")
                     .fontFamily(FONT_FAMILY)
-                    .fontWeight(FontWeight.SemiBold)
+                    .fontWeight(FontWeight.Medium)
                     .toAttrs(),
                 forId = "inputEmail"
             ) {
@@ -85,11 +98,11 @@ fun ContactForm(breakpoint: Breakpoint) {
                     .classNames("form-control")
                     .margin(bottom = 10.px)
                     .fontFamily(FONT_FAMILY)
-                    .fontWeight(FontWeight.SemiBold)
-                    .width(
-                        if (breakpoint >= Breakpoint.MD) 500.px
-                        else 250.px
-                    )
+                    .fontWeight(FontWeight.Medium)
+//                    .width(
+//                        if (breakpoint >= Breakpoint.MD) 500.px
+//                        else 250.px
+//                    )
                     .backgroundColor(Theme.LighterGray.rgb)
                     .boxShadow(0.px, 0.px, 0.px, 0.px, null)
                     .attrsModifier {
@@ -103,7 +116,7 @@ fun ContactForm(breakpoint: Breakpoint) {
                 attrs = Modifier
                     .classNames("form-label")
                     .fontFamily(FONT_FAMILY)
-                    .fontWeight(FontWeight.SemiBold)
+                    .fontWeight(FontWeight.Medium)
                     .toAttrs(),
                 forId = "inputMessage"
             ) {
@@ -115,12 +128,12 @@ fun ContactForm(breakpoint: Breakpoint) {
                     .classNames("form-control")
                     .height(150.px)
                     .fontFamily(FONT_FAMILY)
-                    .fontWeight(FontWeight.SemiBold)
+                    .fontWeight(FontWeight.Medium)
                     .margin(bottom = 20.px)
-                    .width(
-                        if (breakpoint >= Breakpoint.MD) 500.px
-                        else 250.px
-                    )
+//                    .width(
+//                        if (breakpoint >= Breakpoint.MD) 500.px
+//                        else 250.px
+//                    )
                     .backgroundColor(Theme.LighterGray.rgb)
                     .boxShadow(0.px, 0.px, 0.px, 0.px, null)
                     .attrsModifier {
@@ -139,6 +152,8 @@ fun ContactForm(breakpoint: Breakpoint) {
                         .height(40.px)
                         .border(width = 0.px)
                         .borderRadius(r = 5.px)
+                        .fontFamily(FONT_FAMILY)
+                        .fontWeight(FontWeight.Medium)
                         .backgroundColor(Theme.Primary.rgb)
                         .color(Colors.White)
                         .cursor(Cursor.Pointer)

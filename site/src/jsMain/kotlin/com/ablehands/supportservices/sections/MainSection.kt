@@ -6,14 +6,12 @@ import com.ablehands.supportservices.components.Header
 import com.ablehands.supportservices.models.Section
 import com.ablehands.supportservices.models.Theme
 import com.ablehands.supportservices.util.Constants
-import com.ablehands.supportservices.util.Content
 import com.ablehands.supportservices.util.Res
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.ObjectFit
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
-import com.varabyte.kobweb.compose.foundation.layout.Spacer
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
@@ -24,7 +22,6 @@ import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.H1
-import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
@@ -68,7 +65,7 @@ fun MainSection(onMenuClicked: (Boolean) -> Unit) {
                 ) {
                     H1(
                         attrs = Modifier
-                            .fontFamily(Constants.FONT_FAMILY2)
+                            .fontFamily(Constants.FONT_FAMILY)
                             .fontSize(size.value.px)
                             .fontWeight(FontWeight.Bold)
                             .color(Theme.Base.rgb)
@@ -78,7 +75,7 @@ fun MainSection(onMenuClicked: (Boolean) -> Unit) {
                     }
                     H1(
                         attrs = Modifier
-                            .fontFamily(Constants.FONT_FAMILY2)
+                            .fontFamily(Constants.FONT_FAMILY)
                             .fontSize(size.value.px)
                             .fontWeight(FontWeight.Bold)
                             .color(Theme.Base.rgb)

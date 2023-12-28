@@ -105,5 +105,9 @@ object Content {
     val servicesExpanded = listOf(
         Pair("sil", "Supported Independent Living (SIL)"),
         Pair("daily_personal_care_and_domestic_tasks", "Daily personal care and domestic tasks"),
+        Pair("home_support_services", "Home support services"),
+        Pair("support_in_social_activities_and_community_access", "Support in social activities and community access"),
+        Pair("assistance_with_travel_and_transport_arrangements", "Assistance with travel and transport arrangements"),
+        Pair("community_nursing_care", "Community nursing care"),
     )
 }

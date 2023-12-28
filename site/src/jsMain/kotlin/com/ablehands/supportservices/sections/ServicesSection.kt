@@ -15,15 +15,12 @@ import com.ablehands.supportservices.util.Content.nursingPoints
 import com.ablehands.supportservices.util.Content.silDes
 import com.ablehands.supportservices.util.Content.socialActivitiesAndCommunityAccess
 import com.ablehands.supportservices.util.Content.transportArrangements
-import com.ablehands.supportservices.util.Res
 import com.ablehands.supportservices.util.Res.Image.image11
 import com.ablehands.supportservices.util.Res.Image.image24
 import com.ablehands.supportservices.util.Res.Image.image4
 import com.ablehands.supportservices.util.Res.Image.image5
 import com.ablehands.supportservices.util.Res.Image.image8
-import com.varabyte.kobweb.compose.css.CSSTransition
 import com.varabyte.kobweb.compose.css.FontWeight
-import com.varabyte.kobweb.compose.css.Overflow
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -37,20 +34,19 @@ import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
-import com.varabyte.kobweb.silk.components.navigation.Link
-import com.varabyte.kobweb.silk.components.style.ComponentVariant
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
-import org.jetbrains.compose.web.css.*
-import org.jetbrains.compose.web.dom.Col
+import org.jetbrains.compose.web.css.Color
+import org.jetbrains.compose.web.css.FlexWrap
+import org.jetbrains.compose.web.css.percent
+import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
-fun ServicestSection() {
-
+fun ServicestSection2() {
     Box(
         modifier = Modifier
             .id(Section.Services.id)
@@ -60,6 +56,8 @@ fun ServicestSection() {
     ) {
         ServicesContent()
     }
+
+
 }
 
 @Composable
