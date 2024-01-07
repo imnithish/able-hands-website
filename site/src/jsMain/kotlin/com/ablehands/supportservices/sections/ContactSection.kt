@@ -108,24 +108,7 @@ fun ContactContent() {
                     }
 
                 }
-                Row(
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    FaPhone(
-                        modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 10.px, right = 8.px),
-                        size = IconSize.SM
-                    )
-                    H1(
-                        attrs = Modifier
-                            .fontFamily(Constants.FONT_FAMILY)
-                            .fontSize(18.px)
-                            .fontWeight(FontWeight.Medium)
-                            .color(Theme.Base.rgb)
-                            .toAttrs()
-                    ) {
-                        Text(Content.number)
-                    }
-                }
+
                 Row(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
@@ -162,7 +145,24 @@ fun ContactContent() {
                         Text(Content.email2)
                     }
                 }
-
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    FaPhone(
+                        modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 10.px, right = 8.px),
+                        size = IconSize.SM
+                    )
+                    H1(
+                        attrs = Modifier
+                            .fontFamily(Constants.FONT_FAMILY)
+                            .fontSize(18.px)
+                            .fontWeight(FontWeight.Medium)
+                            .color(Theme.Base.rgb)
+                            .toAttrs()
+                    ) {
+                        Text(Content.number)
+                    }
+                }
 
                 VerticalSpacer(8f)
 
