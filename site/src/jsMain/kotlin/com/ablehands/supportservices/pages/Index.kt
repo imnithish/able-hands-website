@@ -9,9 +9,7 @@ import com.ablehands.supportservices.sections.AboutSection
 import com.ablehands.supportservices.sections.ContactSection
 import com.ablehands.supportservices.sections.MainSection
 import com.ablehands.supportservices.sections.MissionSection
-import com.ablehands.supportservices.sections.services.HomeServices
-import com.ablehands.supportservices.sections.services.SILSection
-import com.ablehands.supportservices.sections.services.ServicesSection
+import com.ablehands.supportservices.sections.services.*
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -38,7 +36,11 @@ fun HomePage() {
             MissionSection()
             ServicesSection()
             SILSection()
+            DailyPersonalCareSection()
             HomeServices()
+            SupportInSocialActivitiesSection()
+            AssistanceWithTravelSection()
+            CommunityNursingSection()
             ContactSection()
             Box(modifier = Modifier.height(10.px))
         }

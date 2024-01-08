@@ -18,7 +18,6 @@ object Res {
         const val ndis = "ndis.png"
         const val image5 = "image5.jpg"
         const val image6 = "image6.jpg"
-        const val image7 = "image7.jpg"
         const val image4 = "image4.jpg"
         const val image24 = "image24.png"
         const val image8 = "image8.jpg"
