@@ -166,7 +166,7 @@ fun MissionContentMD() {
 fun MissionContent() {
     Column(
         modifier = Modifier
-            .margin(top = 8.px)
+            .margin(top = 18.px)
             .fillMaxWidth(85.percent),
         horizontalAlignment = Alignment.End
     ) {

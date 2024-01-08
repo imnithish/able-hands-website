@@ -17,6 +17,8 @@ object Res {
         const val wheelchair = "wheelchair.jpg"
         const val ndis = "ndis.png"
         const val image5 = "image5.jpg"
+        const val image6 = "image6.jpg"
+        const val image7 = "image7.jpg"
         const val image4 = "image4.jpg"
         const val image24 = "image24.png"
         const val image8 = "image8.jpg"
@@ -67,8 +69,8 @@ object Content {
         "Meal preparation+We can prepare delicious and nutritious homemade meals using ingredients and recipes you enjoy.",
         "Garden maintenance+We can assist you with lawn-moving services for your garden and other gardening work.",
         "Domestic services+We can assist you with light domestic cleaning, laundry and changing bedsheets.",
-        "Personal care+We can assist you with showering, toileting, dressing, personal grooming, and mobility support such as hoist transfers and getting in and out of bed.",
         "Sleepover support+Our trained staff can stay in your home to provide the support you may require overnight.",
+        "Personal care+We can assist you with showering, toileting, dressing, personal grooming, and mobility support such as hoist transfers and getting in and out of bed.",
     )
 
     val socialActivitiesAndCommunityAccess = listOf(
