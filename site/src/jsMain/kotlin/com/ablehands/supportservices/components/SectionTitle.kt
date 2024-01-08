@@ -7,6 +7,7 @@ import com.ablehands.supportservices.util.Constants.FONT_FAMILY
 import com.ablehands.supportservices.util.ObserveViewportEntered
 import com.varabyte.kobweb.compose.css.CSSTransition
 import com.varabyte.kobweb.compose.css.FontWeight
+import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
@@ -50,10 +51,35 @@ fun SectionTitle(
             )
             .fontWeight(FontWeight.SemiBold)
             .color(color)
+            .textAlign(TextAlign.Center)
             .transition(CSSTransition(property = "margin", duration = 300.ms))
             .toAttrs()
     ) {
         Text(section.titleVariant)
     }
 
+}
+
+@Composable
+fun SectionTitle(
+    modifier: Modifier = Modifier,
+    section: String,
+    color: CSSColorValue = Theme.Base.rgb,
+    fontSize: Int = 22,
+) {
+    P(
+        attrs = modifier
+            .fontFamily(FONT_FAMILY)
+            .fontSize(fontSize.px)
+            .margin(
+                right = 0.px,
+                top = 0.px,
+                bottom = 0.px
+            )
+            .fontWeight(FontWeight.SemiBold)
+            .color(color)
+            .toAttrs()
+    ) {
+        Text(section)
+    }
 }

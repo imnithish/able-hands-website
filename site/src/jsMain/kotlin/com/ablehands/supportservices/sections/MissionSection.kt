@@ -166,7 +166,7 @@ fun MissionContentMD() {
 fun MissionContent() {
     Column(
         modifier = Modifier
-            .margin(top = 40.px)
+            .margin(top = 8.px)
             .fillMaxWidth(85.percent),
         horizontalAlignment = Alignment.End
     ) {
@@ -177,7 +177,16 @@ fun MissionContent() {
             verticalAlignment = Alignment.CenterVertically
         ) {
 
-            Column {
+            Image(
+                modifier = Modifier.borderRadius(8.px),
+                src = Res.Image.mission,
+                width = 512,
+                height = 341
+            )
+
+            Column (
+                modifier = Modifier.margin(left = 60.px),
+            ){
                 SectionTitle(
                     section = Section.Mission,
                     anim = false,
@@ -268,14 +277,6 @@ fun MissionContent() {
                     Text(Content.missions[4])
                 }
             }
-
-
-            Image(
-                modifier = Modifier.borderRadius(8.px).margin(left = 60.px),
-                src = Res.Image.mission,
-                width = 512,
-                height = 341
-            )
         }
     }
 }

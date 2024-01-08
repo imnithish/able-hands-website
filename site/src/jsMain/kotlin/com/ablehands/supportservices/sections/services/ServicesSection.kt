@@ -34,7 +34,7 @@ fun ServicesSectionTitle() {
         Column(
             modifier = Modifier
                 .fillMaxWidth(85.percent)
-            .margin(top = 40.px)
+            .margin(top = 16.px, left = 20.px)
         ) {
             SectionTitle(
                 section = Section.Services,

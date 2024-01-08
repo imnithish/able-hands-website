@@ -106,15 +106,9 @@ fun AboutContent() {
                 .padding(12.px),
             verticalAlignment = Alignment.CenterVertically
         ) {
+            Column {
 
-            Image(
-                modifier = Modifier.borderRadius(8.px).weight(1f),
-                src = Res.Image.unnamed
-            )
-
-            Column(modifier = Modifier.weight(1f).margin(left = 60.px)) {
-
-                SectionTitle(section = Section.About, )
+                SectionTitle(section = Section.About)
                 VerticalSpacer(16f)
                 listOf(about_us_1, about_us_2, about_us_3, about_us_4).forEach {
                     P(
@@ -130,6 +124,10 @@ fun AboutContent() {
                 }
             }
 
+            Image(
+                modifier = Modifier.borderRadius(8.px).margin(left = 60.px),
+                src = Res.Image.unnamed
+            )
         }
     }
 }

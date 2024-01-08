@@ -3,7 +3,7 @@ package com.ablehands.supportservices.util
 object Constants {
     const val SECTION_WIDTH = 1920
     const val FONT_FAMILY = "Montserrat"
-    const val FONT_FAMILY2 = "Raleway"
+    const val FONT_FAMILY2 = "Caveat"
 }
 
 object Res {
