@@ -4,9 +4,11 @@ import com.ablehands.supportservices.models.Theme
 import com.varabyte.kobweb.compose.css.CSSTransition
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.color
+import com.varabyte.kobweb.compose.ui.modifiers.height
 import com.varabyte.kobweb.compose.ui.modifiers.size
 import com.varabyte.kobweb.compose.ui.modifiers.transform
 import com.varabyte.kobweb.compose.ui.modifiers.transition
+import com.varabyte.kobweb.compose.ui.modifiers.width
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
 import com.varabyte.kobweb.silk.components.style.anyLink
 import com.varabyte.kobweb.silk.components.style.hover
@@ -17,7 +19,8 @@ import org.jetbrains.compose.web.css.px
 val LogoStyle by ComponentStyle {
     base {
         Modifier
-            .size(150.px)
+            .width(86.px)
+            .height(81.px)
     }
 }
 
@@ -40,11 +43,11 @@ val PhoneNumberStyle by ComponentStyle {
 val NavigationItemStyle by ComponentStyle {
     base {
         Modifier
-            .color(Theme.Base.rgb)
+            .color(Theme.Black.rgb)
             .transition(CSSTransition(property = "color", duration = 200.ms))
     }
     anyLink {
-        Modifier.color(Theme.Base.rgb)
+        Modifier.color(Theme.Black.rgb)
     }
     hover {
         Modifier.color(Theme.Primary.rgb)

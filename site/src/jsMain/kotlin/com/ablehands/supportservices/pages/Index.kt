@@ -6,6 +6,7 @@ import androidx.compose.runtime.remember
 import com.ablehands.supportservices.components.BackToTopButton
 import com.ablehands.supportservices.components.OverflowMenu
 import com.ablehands.supportservices.sections.AboutSection
+import com.ablehands.supportservices.sections.AboutSection2
 import com.ablehands.supportservices.sections.ContactSection
 import com.ablehands.supportservices.sections.MainSection
 import com.ablehands.supportservices.sections.MissionSection
@@ -32,17 +33,18 @@ fun HomePage() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             MainSection(onMenuClicked = setMenuOpened)
-            AboutSection()
-            MissionSection()
-            ServicesSection()
-            SILSection()
-            DailyPersonalCareSection()
-            HomeServices()
-            SupportInSocialActivitiesSection()
-            AssistanceWithTravelSection()
-            CommunityNursingSection()
-            ContactSection()
-            Box(modifier = Modifier.height(10.px))
+            AboutSection2()
+            ServicesSection2()
+//            MissionSection()
+//            ServicesSection()
+//            SILSection()
+//            DailyPersonalCareSection()
+//            HomeServices()
+//            SupportInSocialActivitiesSection()
+//            AssistanceWithTravelSection()
+//            CommunityNursingSection()
+//            ContactSection()
+//            Box(modifier = Modifier.height(10.px))
         }
         BackToTopButton()
         if (menuOpened) {

@@ -15,15 +15,15 @@ import org.jetbrains.compose.web.css.*
 val NavItemStyle by ComponentStyle {
     base {
         Modifier
-            .color(Theme.Base.rgb)
+            .color(Theme.Black.rgb)
             .fontFamily(Constants.FONT_FAMILY)
-            .fontSize(18.px)
-            .fontWeight(FontWeight.SemiBold)
+            .fontSize(20.px)
+            .fontWeight(FontWeight.Medium)
             .textDecorationLine(TextDecorationLine.None)
             .transition(CSSTransition(property = "color", duration = 200.ms))
     }
     anyLink {
-        Modifier.color(Theme.Base.rgb)
+        Modifier.color(Theme.Black.rgb)
     }
     hover {
         Modifier
@@ -95,14 +95,14 @@ val NavStyle by ComponentStyle {
         Modifier
             .content("")
             .position(Position.Absolute)
-            .right((-5).px)
+            .right((-10).px)
             .top(8.px)
             .cursor(Cursor.Pointer)
             .transform { rotate((-45).deg) }
-            .borderLeft(2.px, LineStyle.Solid, Colors.Black)
-            .borderBottom(2.px, LineStyle.Solid, Colors.Black)
+            .borderLeft(1.8.px, LineStyle.Solid, Colors.Black)
+            .borderBottom(1.8.px, LineStyle.Solid, Colors.Black)
             .transition(CSSTransition("all", 0.2.s, TransitionTimingFunction.EaseIn))
-            .size(7.px)
+            .size(10.px)
     }
     cssRule(".navbar .dropdown:hover:after") {
         Modifier

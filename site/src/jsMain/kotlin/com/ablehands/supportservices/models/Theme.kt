@@ -2,6 +2,7 @@ package com.ablehands.supportservices.models
 
 import org.jetbrains.compose.web.css.CSSColorValue
 import org.jetbrains.compose.web.css.rgb
+import org.jetbrains.compose.web.css.rgba
 
 enum class Theme(
     val hex: String,
@@ -13,5 +14,11 @@ enum class Theme(
     Red(hex = "#8B0000", rgb = rgb(r = 139, g = 0, b = 0)),
     LightGray(hex = "#EDEDED", rgb = rgb(r = 237, g = 237, b = 237)),
     LighterGray(hex = "#F9F9F9", rgb = rgb(r = 249, g = 249, b = 249)),
-    LightBlue(hex = "#e8ecf3", rgb = rgb(r = 232, g = 236, b = 243))
+    LightBlue(hex = "#e8ecf3", rgb = rgb(r = 232, g = 236, b = 243)),
+
+    Bg(hex = "#3151a3", rgb = rgba(r = 49, g = 81, b = 163, a = 0.10)),
+    Black(hex = "#000000", rgb = rgba(r = 0, g = 0, b = 0, a = 1)),
+    Caption(hex = "#363636", rgb = rgba(r = 54, g = 54, b = 54, a = 1)),
+
+    AboutSecondaryLight(hex = "#F7E3F3", rgb = rgba(r = 247, g = 227, b = 243, a = 1))
 }

@@ -1,8 +1,7 @@
 package com.ablehands.supportservices.sections
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
-import com.ablehands.supportservices.components.Header
+import com.ablehands.supportservices.components.Header2
 import com.ablehands.supportservices.models.Section
 import com.ablehands.supportservices.models.Theme
 import com.ablehands.supportservices.util.Constants
@@ -19,7 +18,6 @@ import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
-import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.Text
@@ -28,18 +26,6 @@ import org.jetbrains.compose.web.dom.Text
 fun MainSection(onMenuClicked: (Boolean) -> Unit) {
 
     val breakpoint = rememberBreakpoint()
-
-
-    val size = remember(breakpoint) {
-        if (breakpoint < Breakpoint.MD) 24.px else 54.px
-    }
-    val ndisImageSize = remember(breakpoint) {
-        if (breakpoint < Breakpoint.MD) 40 else 100
-    }
-
-    val ndisBottomMargin = remember(breakpoint) {
-        if (breakpoint < Breakpoint.MD) 16.px else if (breakpoint >= Breakpoint.LG) 74.px else 24.px
-    }
     Box(
         modifier = Modifier
             .id(Section.Main.id)
@@ -52,45 +38,67 @@ fun MainSection(onMenuClicked: (Boolean) -> Unit) {
             verticalArrangement = Arrangement.SpaceBetween,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Header(onMenuClicked = onMenuClicked)
-
+            Header2(onMenuClicked = onMenuClicked)
             Box(
-                modifier = Modifier.fillMaxWidth(85.percent).borderRadius(12.px),
-                contentAlignment = Alignment.Center
+                modifier = Modifier.fillMaxWidth(),
+                contentAlignment = if (breakpoint <= Breakpoint.MD) Alignment.BottomStart else Alignment.Center
             ) {
-                MainBackground()
-                Column(
-                    modifier = Modifier.align(Alignment.BottomStart)
-                        .margin(left = size.value.px, bottom = ndisBottomMargin.value.px)
-                ) {
-                    H1(
-                        attrs = Modifier
-                            .fontFamily(Constants.FONT_FAMILY)
-                            .fontSize(size.value.px)
-                            .fontWeight(FontWeight.Bold)
-                            .color(Theme.Base.rgb)
-                            .toAttrs()
+                if (breakpoint <= Breakpoint.MD) {
+                    MainBackground(Res.Image.imagemainmobile)
+                    Column(
+                        modifier = Modifier
+                            .margin(bottom = 29.px, left=28.px)
                     ) {
-                        Text("Your way.")
+                        H1(
+                            attrs = Modifier
+                                .fontFamily(Constants.FONT_FAMILY)
+                                .fontSize(40.px)
+                                .fontWeight(FontWeight.Bold)
+                                .color(Theme.Primary.rgb)
+                                .toAttrs()
+                        ) {
+                            Text("Your choice.")
+                        }
+                        H1(
+                            attrs = Modifier
+                                .fontFamily(Constants.FONT_FAMILY)
+                                .fontSize(40.px)
+                                .fontWeight(FontWeight.Bold)
+                                .color(Theme.Secondary.rgb)
+                                .toAttrs()
+                        ) {
+                            Text("Your way.")
+                        }
                     }
-                    H1(
-                        attrs = Modifier
-                            .fontFamily(Constants.FONT_FAMILY)
-                            .fontSize(size.value.px)
-                            .fontWeight(FontWeight.Bold)
-                            .color(Theme.Base.rgb)
-                            .toAttrs()
+                } else {
+                    MainBackground(Res.Image.imagemain)
+                    Column(
+                        modifier = Modifier.align(Alignment.CenterStart)
+                            .margin(left = 102.px)
                     ) {
-                        Text("Your choice.")
+                        H1(
+                            attrs = Modifier
+                                .fontFamily(Constants.FONT_FAMILY)
+                                .fontSize(80.px)
+                                .fontWeight(FontWeight.Bold)
+                                .color(Theme.Primary.rgb)
+                                .toAttrs()
+                        ) {
+                            Text("Your choice.")
+                        }
+                        H1(
+                            attrs = Modifier
+                                .fontFamily(Constants.FONT_FAMILY)
+                                .fontSize(80.px)
+                                .fontWeight(FontWeight.Bold)
+                                .color(Theme.Secondary.rgb)
+                                .toAttrs()
+                        ) {
+                            Text("Your way.")
+                        }
                     }
-
-                    Box(
-                        modifier = Modifier.height(if (ndisBottomMargin.value == 74f) 32.px else 0.px)
-                    )
                 }
-
             }
-
         }
     }
 }
@@ -106,11 +114,11 @@ fun NDISImage(size: Int) {
 }
 
 @Composable
-fun MainBackground() {
+fun MainBackground(imagemainmobile: String) {
     Image(
         modifier = Modifier
             .fillMaxSize()
-            .objectFit(ObjectFit.Cover).borderRadius(12.px),
-        src = Res.Image.wheelchair,
+            .objectFit(ObjectFit.Cover),
+        src = imagemainmobile,
     )
 }

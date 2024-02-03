@@ -31,7 +31,7 @@ fun ServicesNavBarItem(
         attrs = NavStyle.toModifier()
             .width(Width.FitContent)
             .classNames("navbar")
-            .padding(top = 0.px, bottom = 0.px, right = 22.px).toAttrs()
+            .padding(top = 0.px, bottom = 0.px, right = 48.px).toAttrs()
     ) {
         Div(
             attrs = NavStyle.toModifier()
@@ -88,9 +88,9 @@ fun ServicesDropdown(servicesExpanded: List<Pair<String, String>>) {
                 Link(
                     modifier = NavigationItemStyle.toModifier()
                         .fontFamily(Constants.FONT_FAMILY)
-                        .fontSize(16.px)
+                        .fontSize(20.px)
                         .padding(top=8.px)
-                        .fontWeight(FontWeight.SemiBold)
+                        .fontWeight(FontWeight.Medium)
                         .textDecorationLine(TextDecorationLine.None),
                     path = "#${service.first}",
                     text = service.second

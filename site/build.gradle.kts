@@ -17,15 +17,18 @@ kobweb {
         index {
             description.set("Disability support and community nursing services")
             head.add {
-
                 link(rel = "preconnect", href = "https://fonts.googleapis.com")
-                link(rel = "preconnect", href = "https://fonts.gstatic.com") { attributes["crossorigin"] = "" }
                 link(
-                    href = "https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap",
+                    rel = "preconnect",
+                    href = "https://fonts.gstatic.com"
+                ) { attributes["crossorigin"] = "" }
+                link(
+                    href = "https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Libre+Bodoni:wght@400;500;600;700&display=swap",
                     rel = "stylesheet"
                 )
                 script {
-                    src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                    src =
+                        "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
                 }
                 link {
                     rel = "stylesheet"

@@ -13,8 +13,10 @@ import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.web.css.CSSColorValue
+import org.jetbrains.compose.web.css.CSSNumeric
 import org.jetbrains.compose.web.css.ms
 import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 
@@ -81,5 +83,24 @@ fun SectionTitle(
             .toAttrs()
     ) {
         Text(section)
+    }
+}
+
+@Composable
+fun SectionTitle2(
+    modifier: Modifier = Modifier,
+    title: String,
+    color: CSSColorValue = Theme.Black.rgb,
+    fontSize: CSSNumeric = 40.px,
+) {
+    H1(
+        attrs = modifier
+            .fontFamily(FONT_FAMILY)
+            .fontSize(fontSize)
+            .fontWeight(FontWeight.Bold)
+            .color(color)
+            .toAttrs()
+    ) {
+        Text(title)
     }
 }

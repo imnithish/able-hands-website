@@ -2,8 +2,8 @@ package com.ablehands.supportservices.util
 
 object Constants {
     const val SECTION_WIDTH = 1920
-    const val FONT_FAMILY = "Montserrat"
-    const val FONT_FAMILY2 = "Caveat"
+    const val FONT_FAMILY = "Lexend"
+    const val FONT_FAMILY2 = "Libre Bodoni"
 }
 
 object Res {
@@ -12,6 +12,7 @@ object Res {
 
     object Image {
         const val logo = "logo.png"
+        const val hambutton = "hambutton.svg"
         const val unnamed = "unnamed.jpg"
         const val mission = "image2.jpg"
         const val wheelchair = "wheelchair.jpg"
@@ -22,6 +23,15 @@ object Res {
         const val image24 = "image24.png"
         const val image8 = "image8.jpg"
         const val image11 = "image11.jpg"
+
+
+        const val imagemain = "imagemain.png"
+        const val imagemainmobile = "imagemainmobile.png"
+        const val image_4 = "image-4.png"
+        const val image_5 = "image-5.png"
+        const val arrowdown = "arrowdown.svg"
+        const val logo_about = "logo_about.png"
+        const val image_6 = "image-6.png"
     }
 }
 
@@ -107,8 +117,58 @@ object Content {
         Pair("sil", "Supported Independent Living (SIL)"),
         Pair("daily_personal_care_and_domestic_tasks", "Daily personal care and domestic tasks"),
         Pair("home_support_services", "Home support services"),
-        Pair("support_in_social_activities_and_community_access", "Support in social activities and community access"),
-        Pair("assistance_with_travel_and_transport_arrangements", "Assistance with travel and transport arrangements"),
+        Pair(
+            "support_in_social_activities_and_community_access",
+            "Support in social activities and community access"
+        ),
+        Pair(
+            "assistance_with_travel_and_transport_arrangements",
+            "Assistance with travel and transport arrangements"
+        ),
         Pair("community_nursing_care", "Community nursing care"),
     )
+
+    val aboutSub = listOf(
+        AboutSub(
+            "Our Mission",
+            listOf(
+                "⦁ To empower, encourage and enable people with disabilities to enhance their quality of life with dignity and respect.",
+                "⦁ To evaluate and exceed stakeholders' expectations.",
+                "⦁ To provide care focused on the holistic well-being of an individual."
+            )
+        ),
+        AboutSub(
+            "Our vision",
+            listOf("Able Hands Support Service's vision is to create a resilient and empowered community in participation to support people with disabilities to live a great life with choice.")
+        ),
+        AboutSub(
+            "Our Values",
+            listOf("Able Hands Support Service's vision is to create a resilient and empowered community in participation to support people with disabilities to live a great life with choice.")
+        )
+    )
+
+    val silPoints by lazy {
+        listOf(
+            Pair(
+                "mingcute-time-line.svg",
+                "24/7 support with experienced support workers/registered nurses."
+            ),
+            Pair("solar-bus-outline.svg", "Support for appointments, including transportation."),
+            Pair(
+                "ep-food.svg",
+                "Support with daily living skills such as preparing meals, cleaning and cooking etc."
+            ),
+            Pair("healthicons-eco-care-outline.svg", "Help with personal care activities."),
+            Pair("fluent-briefcase-medical-16-regular.svg", "Help with personal care activities."),
+            Pair(
+                "fluent-mdl2-family.svg",
+                "Support with daily living skills such as preparing meals, cleaning and cooking etc."
+            )
+        )
+    }
 }
+
+data class AboutSub(
+    val heading: String,
+    val points: List<String>
+)
