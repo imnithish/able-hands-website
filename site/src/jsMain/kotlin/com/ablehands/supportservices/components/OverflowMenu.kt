@@ -1,3 +1,11 @@
+/*
+ * Created by Nitheesh AG on 11, 2, 2024
+ * Copyright (C) 2024 Able hands support services Pty Ltd. - All Rights Reserved
+ *
+ * Unauthorized copying or redistribution of this file in source and binary forms via any medium
+ * is strictly prohibited.
+ */
+
 package com.ablehands.supportservices.components
 
 import androidx.compose.runtime.*
@@ -7,6 +15,7 @@ import com.ablehands.supportservices.styles.NavigationItemStyle
 import com.ablehands.supportservices.styles.PhoneNumberStyle
 import com.ablehands.supportservices.util.Constants.FONT_FAMILY
 import com.ablehands.supportservices.util.Content
+import com.ablehands.supportservices.util.Content.servicesExpanded
 import com.ablehands.supportservices.util.Res
 import com.varabyte.kobweb.compose.css.*
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -16,8 +25,12 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Color.Companion.argb
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.thenIf
 import com.varabyte.kobweb.compose.ui.toAttrs
+import com.varabyte.kobweb.core.init.KobwebConfig
+import com.varabyte.kobweb.core.rememberPageContext
 import com.varabyte.kobweb.navigation.OpenLinkStrategy
+import com.varabyte.kobweb.navigation.toOpenLinkStrategy
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.icons.fa.FaEnvelope
 import com.varabyte.kobweb.silk.components.icons.fa.FaPhone
@@ -30,6 +43,7 @@ import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.dom.Button
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.Text
 
@@ -39,6 +53,8 @@ fun OverflowMenu(onMenuClosed: (Boolean) -> Unit) {
     val breakpoint = rememberBreakpoint()
     var translateX by remember { mutableStateOf((-100).percent) }
     var opacity by remember { mutableStateOf(0.percent) }
+
+    val ctx = rememberPageContext()
 
     LaunchedEffect(breakpoint) {
         translateX = 0.percent
@@ -53,6 +69,9 @@ fun OverflowMenu(onMenuClosed: (Boolean) -> Unit) {
         }
     }
 
+    var expanded by remember {
+        mutableStateOf(false)
+    }
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -97,85 +116,122 @@ fun OverflowMenu(onMenuClosed: (Boolean) -> Unit) {
                     src = Res.Image.logo
                 )
             }
-            Section.entries.toTypedArray().take(6).filterNot { it.id == "main" }.forEach { section ->
-                Link(
-                    modifier = NavigationItemStyle.toModifier()
-                        .margin(bottom = 10.px)
+            Link(
+                modifier = NavigationItemStyle.toModifier()
+                    .margin(bottom = 24.px)
+                    .fontFamily(FONT_FAMILY)
+                    .fontSize(20.px)
+                    .fontWeight(FontWeight.Medium)
+                    .textDecorationLine(TextDecorationLine.None)
+                    .onClick {
+                        scope.launch {
+                            translateX = (-100).percent
+                            opacity = 0.percent
+                            delay(500)
+                            onMenuClosed(false)
+                        }
+                    },
+                path = "#about",
+                text = "About US",
+                openInternalLinksStrategy = OpenLinkStrategy.IN_PLACE
+            )
+
+            Link(
+                modifier = NavigationItemStyle.toModifier()
+                    .margin(bottom = 24.px)
+                    .fontFamily(FONT_FAMILY)
+                    .fontSize(20.px)
+                    .fontWeight(FontWeight.Medium)
+                    .textDecorationLine(TextDecorationLine.None)
+                    .onClick {
+                        scope.launch {
+                            translateX = (-100).percent
+                            opacity = 0.percent
+                            delay(500)
+                            onMenuClosed(false)
+                        }
+                    },
+                path = "#mission",
+                text = "Our Mission",
+                openInternalLinksStrategy = OpenLinkStrategy.IN_PLACE
+            )
+
+            Row(modifier = Modifier.onClick {
+                expanded = !expanded
+            }) {
+                H1(
+                    attrs = Modifier
+                        .margin(bottom = 24.px)
                         .fontFamily(FONT_FAMILY)
-                        .fontSize(16.px)
-                        .fontWeight(FontWeight.Black)
-                        .textDecorationLine(TextDecorationLine.None)
-                        .onClick {
-                            scope.launch {
-                                translateX = (-100).percent
-                                opacity = 0.percent
-                                delay(500)
-                                onMenuClosed(false)
-                            }
-                        },
-                    path = section.path,
-                    text = section.title,
-                    openInternalLinksStrategy = OpenLinkStrategy.IN_PLACE
+                        .fontSize(20.px)
+                        .fontWeight(FontWeight.Medium).toAttrs(),
+                ) {
+                    Text("Our Services")
+                }
+
+                Image(
+                    modifier = Modifier.margin(left = 10.px).thenIf(expanded) {
+                        Modifier.rotate(180.deg)
+                    },
+                    src = Res.Image.arror_down_black
                 )
+            }
+            if (expanded) {
+                servicesExpanded.forEach {
+                    Link(
+                        modifier = NavigationItemStyle.toModifier()
+                            .margin(bottom = 24.px)
+                            .fontFamily(FONT_FAMILY)
+                            .fontSize(20.px)
+                            .fontWeight(FontWeight.Medium)
+                            .textDecorationLine(TextDecorationLine.None)
+                            .onClick {
+                                scope.launch {
+                                    translateX = (-100).percent
+                                    opacity = 0.percent
+                                    delay(500)
+                                    onMenuClosed(false)
+                                }
+                            },
+                        path = "#" + it.first,
+                        text = it.second,
+                        openInternalLinksStrategy = OpenLinkStrategy.IN_PLACE
+                    )
+                }
             }
 
-            Row(
-                Modifier.margin(top = 16.px),
-                verticalAlignment = Alignment.CenterVertically
+            Button(
+                attrs = Modifier
+                    .height(49.px)
+                    .width(184.px)
+                    .border(width = 0.px)
+                    .borderRadius(r = 10.px)
+                    .fontFamily(FONT_FAMILY)
+                    .fontWeight(FontWeight.Medium)
+                    .fontSize(20.px)
+                    .backgroundColor(Theme.Primary.rgb)
+                    .color(Colors.White)
+                    .onClick { evt ->
+                        scope.launch {
+                            translateX = (-100).percent
+                            opacity = 0.percent
+                            delay(500)
+                            onMenuClosed(false)
+                        }
+                        ctx.router.navigateTo(
+                            "#contact ",
+                            openInternalLinksStrategy = evt.toOpenLinkStrategy(
+                                KobwebConfig.Instance.openLinkStrategies.internal
+                            ),
+                            openExternalLinksStrategy = evt.toOpenLinkStrategy(
+                                KobwebConfig.Instance.openLinkStrategies.external
+                            )
+                        )
+                    }
+                    .cursor(Cursor.Pointer)
+                    .toAttrs()
             ) {
-                FaPhone(
-                    modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 8.px, right = 8.px),
-                    size = IconSize.SM
-                )
-                H1(
-                    attrs = Modifier
-                        .fontFamily(FONT_FAMILY)
-                        .fontSize(16.px)
-                        .fontWeight(FontWeight.Black)
-                        .color(Theme.Base.rgb)
-                        .toAttrs()
-                ) {
-                    Text("+91 8907471155")
-                }
-            }
-
-            Row(
-                Modifier.margin(top = 4.px),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                FaEnvelope(
-                    modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 8.px, right = 8.px),
-                    size = IconSize.SM
-                )
-                H1(
-                    attrs = Modifier
-                        .fontFamily(FONT_FAMILY)
-                        .fontSize(14.px)
-                        .fontWeight(FontWeight.Black)
-                        .color(Theme.Base.rgb)
-                        .toAttrs()
-                ) {
-                    Text(Content.email1)
-                }
-            }
-            Row(
-                Modifier.margin(top = 4.px),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                FaEnvelope(
-                    modifier = Modifier.color(Theme.Base.rgb).rotateY(180.deg).margin(bottom = 8.px, right = 8.px),
-                    size = IconSize.SM
-                )
-                H1(
-                    attrs = Modifier
-                        .fontFamily(FONT_FAMILY)
-                        .fontSize(14.px)
-                        .fontWeight(FontWeight.Black)
-                        .color(Theme.Base.rgb)
-                        .toAttrs()
-                ) {
-                    Text(Content.email2)
-                }
+                Text("Connect with us")
             }
         }
     }

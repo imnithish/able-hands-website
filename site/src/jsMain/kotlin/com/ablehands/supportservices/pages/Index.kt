@@ -1,3 +1,11 @@
+/*
+ * Created by Nitheesh AG on 11, 2, 2024
+ * Copyright (C) 2024 Able hands support services Pty Ltd. - All Rights Reserved
+ *
+ * Unauthorized copying or redistribution of this file in source and binary forms via any medium
+ * is strictly prohibited.
+ */
+
 package com.ablehands.supportservices.pages
 
 import androidx.compose.runtime.Composable
@@ -8,8 +16,12 @@ import com.ablehands.supportservices.components.OverflowMenu
 import com.ablehands.supportservices.sections.AboutSection
 import com.ablehands.supportservices.sections.AboutSection2
 import com.ablehands.supportservices.sections.ContactSection
+import com.ablehands.supportservices.sections.ContactSection2
+import com.ablehands.supportservices.sections.FooterSection
 import com.ablehands.supportservices.sections.MainSection
 import com.ablehands.supportservices.sections.MissionSection
+import com.ablehands.supportservices.sections.MissionSection2
+import com.ablehands.supportservices.sections.TailoredSection
 import com.ablehands.supportservices.sections.services.*
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -34,17 +46,20 @@ fun HomePage() {
         ) {
             MainSection(onMenuClicked = setMenuOpened)
             AboutSection2()
+            MissionSection2()
             ServicesSection2()
+            DailyPersonalCareSection2()
 //            MissionSection()
 //            ServicesSection()
 //            SILSection()
 //            DailyPersonalCareSection()
 //            HomeServices()
-//            SupportInSocialActivitiesSection()
-//            AssistanceWithTravelSection()
-//            CommunityNursingSection()
-//            ContactSection()
-//            Box(modifier = Modifier.height(10.px))
+            SupportInSocialActivitiesSection2()
+            AssistanceWithTravelSection2()
+            CommunityNursingCareSection2()
+            TailoredSection()
+            ContactSection2()
+            FooterSection()
         }
         BackToTopButton()
         if (menuOpened) {

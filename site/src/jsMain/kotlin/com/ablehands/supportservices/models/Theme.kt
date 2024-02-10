@@ -1,3 +1,11 @@
+/*
+ * Created by Nitheesh AG on 11, 2, 2024
+ * Copyright (C) 2024 Able hands support services Pty Ltd. - All Rights Reserved
+ *
+ * Unauthorized copying or redistribution of this file in source and binary forms via any medium
+ * is strictly prohibited.
+ */
+
 package com.ablehands.supportservices.models
 
 import org.jetbrains.compose.web.css.CSSColorValue
@@ -17,8 +25,14 @@ enum class Theme(
     LightBlue(hex = "#e8ecf3", rgb = rgb(r = 232, g = 236, b = 243)),
 
     Bg(hex = "#3151a3", rgb = rgba(r = 49, g = 81, b = 163, a = 0.10)),
+    Bg2(hex = "#F4F4F4", rgb = rgba(r = 244, g = 244, b = 244, a = 1)),
     Black(hex = "#000000", rgb = rgba(r = 0, g = 0, b = 0, a = 1)),
+    Black40(hex = "#000000", rgb = rgba(r = 0, g = 0, b = 0, a = .40)),
     Caption(hex = "#363636", rgb = rgba(r = 54, g = 54, b = 54, a = 1)),
 
-    AboutSecondaryLight(hex = "#F7E3F3", rgb = rgba(r = 247, g = 227, b = 243, a = 1))
+    AboutSecondaryLight(hex = "#F7E3F3", rgb = rgba(r = 247, g = 227, b = 243, a = 1)),
+
+    GrayVariant(hex = "#363636", rgb = rgba(r = 54, g = 54, b = 54, a = 1))
+
+
 }

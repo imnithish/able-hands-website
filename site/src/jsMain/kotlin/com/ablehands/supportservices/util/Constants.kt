@@ -1,3 +1,11 @@
+/*
+ * Created by Nitheesh AG on 11, 2, 2024
+ * Copyright (C) 2024 Able hands support services Pty Ltd. - All Rights Reserved
+ *
+ * Unauthorized copying or redistribution of this file in source and binary forms via any medium
+ * is strictly prohibited.
+ */
+
 package com.ablehands.supportservices.util
 
 object Constants {
@@ -12,6 +20,7 @@ object Res {
 
     object Image {
         const val logo = "logo.png"
+        const val logoT = "image-1-3.png"
         const val hambutton = "hambutton.svg"
         const val unnamed = "unnamed.jpg"
         const val mission = "image2.jpg"
@@ -23,15 +32,50 @@ object Res {
         const val image24 = "image24.png"
         const val image8 = "image8.jpg"
         const val image11 = "image11.jpg"
+        const val ndisT = "ndisT.png"
 
 
         const val imagemain = "imagemain.png"
         const val imagemainmobile = "imagemainmobile.png"
         const val image_4 = "image-4.png"
         const val image_5 = "image-5.png"
+        const val image_5_small = "image-5-small.png"
         const val arrowdown = "arrowdown.svg"
-        const val logo_about = "logo_about.png"
+        const val arror_down_black = "arror_down_black.svg"
+        const val logo_about = "logo_about.svg"
         const val image_6 = "image-6.png"
+        const val image_7 = "image-7.png"
+        const val image_9 = "image-9.png"
+        const val image_8_1 = "image-8-1.png"
+        const val image_8_2 = "image-8-2.png"
+        const val image_3_icon = "image-3.png"
+        const val unsplash_4le7k9xvyje = "unsplash-4le7k9xvyje.png"
+
+
+        const val ion_location = "ion-location.svg"
+        const val solar_phone_bold = "solar-phone-bold.svg"
+        const val tabler_mail_filled_1 = "tabler-mail-filled-1.svg"
+
+
+        const val x = "x.svg"
+        const val insta = "insta.svg"
+        const val fb = "fb.svg"
+
+        val social by lazy {
+            listOf(
+                fb, insta, x
+            )
+        }
+
+        val contactWays by lazy {
+            listOf(
+                Pair(solar_phone_bold, "+61 451120279"),
+                Pair(tabler_mail_filled_1, "info@ablehands.com.au"),
+                Pair(tabler_mail_filled_1, "contact@ablehands.com.au"),
+                Pair(ion_location, "QLD 4157"),
+            )
+        }
+
     }
 }
 
@@ -108,15 +152,14 @@ object Content {
         "⦁\tCatheter care, including Indwelling and suprapubic catheter.",
         "⦁\tContinence assessment, education, reporting and management",
         "⦁\tPEG feeding, enteral feeding and nasogastric feeding.",
-        "⦁\tPEG feeding, enteral feeding and nasogastric feeding.",
         "⦁\tMedication management, including oral, PR and injections.",
         "⦁\tRecovery support: Helping you regain your feet after an injury, illness or surgery. Receive short-term support while you recover from an illness or injury. "
     )
 
     val servicesExpanded = listOf(
-        Pair("sil", "Supported Independent Living (SIL)"),
+        Pair("services", "Supported Independent Living (SIL)"),
         Pair("daily_personal_care_and_domestic_tasks", "Daily personal care and domestic tasks"),
-        Pair("home_support_services", "Home support services"),
+        Pair("daily_personal_care_and_domestic_tasks", "Home support services"),
         Pair(
             "support_in_social_activities_and_community_access",
             "Support in social activities and community access"
@@ -164,6 +207,22 @@ object Content {
                 "fluent-mdl2-family.svg",
                 "Support with daily living skills such as preparing meals, cleaning and cooking etc."
             )
+        )
+    }
+
+    val assistanceWithTravelPoints by lazy {
+        listOf(
+            "⦁ Attending the medical hospital and GP appointments",
+            "⦁ Assistance with shopping and groceries",
+            "⦁ Attending social activities in the community"
+        )
+    }
+
+    val tailoredPoints by lazy {
+        listOf(
+            "If you have been involved in an accident, suffered an injury or have been in hospital for an illness, you may need some support at home for a period of time whilst you get back on your fee.",
+            "We work with a number of healthcare providers to support their clients or patients to get back on the road to recovery as quickly as possible.",
+            "If you need help transitioning from the hospital to your home, you may need to access our short-term support services. From help with cleaning your home to attending appointments, we can support you."
         )
     }
 }

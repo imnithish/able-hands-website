@@ -1,3 +1,11 @@
+/*
+ * Created by Nitheesh AG on 11, 2, 2024
+ * Copyright (C) 2024 Able hands support services Pty Ltd. - All Rights Reserved
+ *
+ * Unauthorized copying or redistribution of this file in source and binary forms via any medium
+ * is strictly prohibited.
+ */
+
 package com.ablehands.supportservices.components
 
 import androidx.compose.runtime.Composable
@@ -129,7 +137,7 @@ fun Header2(onMenuClicked: (Boolean) -> Unit) {
 fun AbleLogo(breakpoint: Breakpoint) {
     val widthAndHeight = remember(breakpoint) {
         if (breakpoint <= Breakpoint.MD)
-            Pair(42.px, 40.px) else Pair(86.px, 81.px)
+            Pair(62.px, 60.px) else Pair(106.px, 101.px)
     }
 
     Image(

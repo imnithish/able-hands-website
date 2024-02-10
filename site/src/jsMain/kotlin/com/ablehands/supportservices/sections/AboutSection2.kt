@@ -1,3 +1,11 @@
+/*
+ * Created by Nitheesh AG on 11, 2, 2024
+ * Copyright (C) 2024 Able hands support services Pty Ltd. - All Rights Reserved
+ *
+ * Unauthorized copying or redistribution of this file in source and binary forms via any medium
+ * is strictly prohibited.
+ */
+
 package com.ablehands.supportservices.sections
 
 import androidx.compose.runtime.Composable
@@ -90,16 +98,6 @@ fun AboutSection2Content(breakpoint: Breakpoint) {
             Pair(320, 239) else Pair(640, 467)
     }
 
-    val subImageSize: Pair<Int, Int> = remember(breakpoint) {
-        if (breakpoint < Breakpoint.MD)
-            Pair(310, 167) else Pair(896, 435)
-    }
-
-    val iconImageSize: Pair<Int, Int> = remember(breakpoint) {
-        if (breakpoint < Breakpoint.MD)
-            Pair(30, 32) else Pair(124, 130)
-    }
-
     SimpleGrid(
         modifier = Modifier.then(
             if (breakpoint < Breakpoint.MD) Modifier.padding(left = 20.px) else Modifier.padding(
@@ -173,83 +171,6 @@ fun AboutSection2Content(breakpoint: Breakpoint) {
 
     VerticalSpacer(if (breakpoint < Breakpoint.MD) 108f else 39f)
 
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(Theme.AboutSecondaryLight.rgb)
-    ) {
-        Image(
-            src = Res.Image.image_5,
-            width = subImageSize.first,
-            height = subImageSize.second
-        )
-
-        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            Image(
-                src = Res.Image.logo_about,
-                width = iconImageSize.first,
-                height = iconImageSize.second
-            )
-        }
-    }
-
-    VerticalSpacer(if (breakpoint < Breakpoint.MD) 32f else 114f)
-
-    SimpleGrid(
-        modifier = Modifier.then(
-            if (breakpoint < Breakpoint.MD) Modifier.padding(leftRight = 20.px) else Modifier.padding(
-                leftRight = 67.px
-            )
-        ),
-        numColumns = numColumns(base = 1, md = 3)
-    ) {
-        aboutSub.forEachIndexed { i, it ->
-            Column(
-                modifier = Modifier.thenUnless(
-                    breakpoint < Breakpoint.MD
-                ) {
-                    if (i == 0 || i == 1)
-                        Modifier.padding(right = 66.px)
-                    else Modifier
-                }.thenIf(
-                    breakpoint < Breakpoint.MD
-                ) {
-                    if (i == 1 || i == 2)
-                        Modifier.padding(top = 24.px)
-                    else Modifier
-                },
-            ) {
-                H1(
-                    attrs = Modifier
-                        .fontFamily(Constants.FONT_FAMILY)
-                        .fontSize(titleSizes)
-                        .fontWeight(FontWeight.Bold)
-                        .color(Theme.Primary.rgb)
-                        .toAttrs()
-                ) {
-                    Text(
-                        it.heading
-                    )
-                }
-
-                it.points.forEach {
-                    P(
-                        attrs = Modifier
-                            .fontFamily(Constants.FONT_FAMILY)
-                            .fontSize(contentSizes)
-                            .fontWeight(FontWeight.Normal)
-                            .color(Theme.Base.rgb)
-                            .toAttrs()
-                    ) {
-                        Text(
-                            it
-                        )
-                    }
-                }
-            }
-        }
-    }
-
 }
 
 @Composable
@@ -260,9 +181,4 @@ fun AboutUsImage(mainImageSize: Pair<Int, Int>) {
         width = mainImageSize.first,
         height = mainImageSize.second
     )
-}
-
-@Composable
-fun AboutSection2ContentMD() {
-
 }

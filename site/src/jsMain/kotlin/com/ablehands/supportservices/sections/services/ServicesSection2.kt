@@ -1,3 +1,11 @@
+/*
+ * Created by Nitheesh AG on 11, 2, 2024
+ * Copyright (C) 2024 Able hands support services Pty Ltd. - All Rights Reserved
+ *
+ * Unauthorized copying or redistribution of this file in source and binary forms via any medium
+ * is strictly prohibited.
+ */
+
 package com.ablehands.supportservices.sections.services
 
 import androidx.compose.runtime.Composable
@@ -165,9 +173,9 @@ fun ServicesSection2Content(breakpoint: Breakpoint) {
     SimpleGrid(
         modifier = Modifier.thenIf(
             breakpoint < Breakpoint.MD
-        ) { Modifier.padding(left = 20.px, right = 20.px, top = 39.px, bottom = 54.px) }
+        ) { Modifier.padding(left = 20.px, right = 20.px, top = 39.px, bottom = 0.px) }
             .thenUnless(breakpoint < Breakpoint.MD) {
-                Modifier.padding(left = 89.px, right = 111.px, top = 76.px, bottom = 108.px)
+                Modifier.padding(left = 89.px, right = 111.px, top = 76.px, bottom = 0.px)
             },
         numColumns = numColumns(base = 2, md = 3)
     ) {

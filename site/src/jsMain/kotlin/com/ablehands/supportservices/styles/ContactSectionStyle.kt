@@ -1,3 +1,11 @@
+/*
+ * Created by Nitheesh AG on 11, 2, 2024
+ * Copyright (C) 2024 Able hands support services Pty Ltd. - All Rights Reserved
+ *
+ * Unauthorized copying or redistribution of this file in source and binary forms via any medium
+ * is strictly prohibited.
+ */
+
 package com.ablehands.supportservices.styles
 
 import com.ablehands.supportservices.models.Theme
@@ -18,22 +26,22 @@ val InputStyle by ComponentStyle {
     base {
         Modifier
             .border(
-                width = 2.px,
+                width = 1.px,
                 style = LineStyle.Solid,
-                color = Theme.LightGray.rgb
+                color = Theme.Black40.rgb
             )
             .transition(CSSTransition(property = "border", duration = 200.ms))
     }
     focus {
         Modifier.border(
-            width = 2.px,
+            width = 1.px,
             style = LineStyle.Solid,
             color = Theme.Primary.rgb
         )
     }
     hover {
         Modifier.border(
-            width = 2.px,
+            width = 1.px,
             style = LineStyle.Solid,
             color = Theme.Primary.rgb
         )
@@ -43,11 +51,11 @@ val InputStyle by ComponentStyle {
 val MainButtonStyle by ComponentStyle {
     base {
         Modifier
-            .width(100.px)
+            .width(120.px)
             .transition(CSSTransition(property = "width", duration = 200.ms))
     }
     hover {
-        Modifier.width(120.px)
+        Modifier.width(140.px)
     }
 }
 
