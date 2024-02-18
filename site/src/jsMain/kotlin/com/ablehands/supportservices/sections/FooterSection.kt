@@ -10,11 +10,8 @@ package com.ablehands.supportservices.sections
 
 import androidx.compose.runtime.Composable
 import com.ablehands.supportservices.components.VerticalSpacer
-import com.ablehands.supportservices.models.Section
 import com.ablehands.supportservices.models.Theme
-import com.ablehands.supportservices.styles.SocialLinkStyle
 import com.ablehands.supportservices.util.Constants
-import com.ablehands.supportservices.util.Content
 import com.ablehands.supportservices.util.Res
 import com.ablehands.supportservices.util.Res.Image.contactWays
 import com.ablehands.supportservices.util.Res.Image.social
@@ -33,31 +30,18 @@ import com.varabyte.kobweb.compose.ui.modifiers.fontFamily
 import com.varabyte.kobweb.compose.ui.modifiers.fontSize
 import com.varabyte.kobweb.compose.ui.modifiers.fontWeight
 import com.varabyte.kobweb.compose.ui.modifiers.height
-import com.varabyte.kobweb.compose.ui.modifiers.id
 import com.varabyte.kobweb.compose.ui.modifiers.margin
 import com.varabyte.kobweb.compose.ui.modifiers.maxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.padding
-import com.varabyte.kobweb.compose.ui.modifiers.rotateY
 import com.varabyte.kobweb.compose.ui.modifiers.textAlign
 import com.varabyte.kobweb.compose.ui.modifiers.width
 import com.varabyte.kobweb.compose.ui.thenIf
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.navigation.OpenLinkStrategy
 import com.varabyte.kobweb.silk.components.graphics.Image
-import com.varabyte.kobweb.silk.components.icons.fa.FaEnvelope
-import com.varabyte.kobweb.silk.components.icons.fa.FaFacebook
-import com.varabyte.kobweb.silk.components.icons.fa.FaInstagram
-import com.varabyte.kobweb.silk.components.icons.fa.FaLocationDot
-import com.varabyte.kobweb.silk.components.icons.fa.FaPhone
-import com.varabyte.kobweb.silk.components.icons.fa.FaTwitter
-import com.varabyte.kobweb.silk.components.icons.fa.IconSize
-import com.varabyte.kobweb.silk.components.layout.SimpleGrid
-import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
-import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
-import org.jetbrains.compose.web.css.deg
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.Text
@@ -160,7 +144,7 @@ fun FooterSection() {
                         H1(
                             attrs = Modifier
                                 .fontFamily(Constants.FONT_FAMILY)
-                                .fontSize(20.px)
+                                .fontSize(16.px)
                                 .margin(left = 10.px)
                                 .fontWeight(FontWeight.Normal)
                                 .color(Theme.Black.rgb)

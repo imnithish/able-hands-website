@@ -182,7 +182,7 @@ fun OverflowMenu(onMenuClosed: (Boolean) -> Unit) {
                         modifier = NavigationItemStyle.toModifier()
                             .margin(bottom = 24.px)
                             .fontFamily(FONT_FAMILY)
-                            .fontSize(20.px)
+                            .fontSize(18.px)
                             .fontWeight(FontWeight.Medium)
                             .textDecorationLine(TextDecorationLine.None)
                             .onClick {
@@ -203,9 +203,9 @@ fun OverflowMenu(onMenuClosed: (Boolean) -> Unit) {
             Button(
                 attrs = Modifier
                     .height(49.px)
-                    .width(184.px)
                     .border(width = 0.px)
                     .borderRadius(r = 10.px)
+                    .padding(leftRight = 16.px)
                     .fontFamily(FONT_FAMILY)
                     .fontWeight(FontWeight.Medium)
                     .fontSize(20.px)

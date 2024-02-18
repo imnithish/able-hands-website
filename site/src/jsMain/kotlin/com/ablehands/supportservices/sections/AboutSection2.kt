@@ -130,7 +130,7 @@ fun AboutSection2Content(breakpoint: Breakpoint) {
                         .toAttrs()
                 ) {
                     Text(
-                        "Able Hands Support Services is a registered NDIS provider with a team of dedicated registered nurses and experienced disability support workers in Queensland, Australia.\n" +
+                        "Able Hands Support Services is a registered NDIS provider with a team of dedicated registered nurses and experienced disability support workers based in Queensland, Australia.\n" +
                                 "We provide a range of disability and aged care services across Brisbane and surrounding regions. AHS aims to empower our participants to live happily and independently by providing a range of capacity and skill-building programs and individual supports that are bespoke to meet the unique needs of our participants."
                     )
                 }
@@ -168,8 +168,6 @@ fun AboutSection2Content(breakpoint: Breakpoint) {
         }
 
     }
-
-    VerticalSpacer(if (breakpoint < Breakpoint.MD) 108f else 39f)
 
 }
 

@@ -113,7 +113,7 @@ fun CommunityNursingCareSectionContent2(
                             .fontStyle(FontStyle.Italic)
                             .toAttrs()
                     ) {
-                        Text("Our nursing services are offered by experienced registered nurses")
+                        Text("Our nursing services are offered by experienced registered nurses.")
                     }
                     VerticalSpacer(20f)
 

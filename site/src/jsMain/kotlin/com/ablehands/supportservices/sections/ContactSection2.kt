@@ -112,7 +112,7 @@ fun ContactSection2() {
                             .id("inputEmail")
                             .classNames("form-control")
                             .fontFamily(Constants.FONT_FAMILY)
-                            .fontWeight(FontWeight.Medium)
+                            .fontWeight(FontWeight.Normal)
                             .borderRadius(4.px)
                             .minHeight(60.px)
                             .boxShadow(0.px, 0.px, 0.px, 0.px, null)
@@ -132,7 +132,6 @@ fun ContactSection2() {
                             .minHeight(195.px)
                             .fontFamily(Constants.FONT_FAMILY)
                             .fontWeight(FontWeight.Normal)
-                            .fontSize(20.px)
                             .borderRadius(4.px)
                             .boxShadow(0.px, 0.px, 0.px, 0.px, null)
                             .attrsModifier {
@@ -225,7 +224,7 @@ fun ContactSection2() {
                                 .id("inputEmail")
                                 .classNames("form-control")
                                 .fontFamily(Constants.FONT_FAMILY)
-                                .fontWeight(FontWeight.Medium)
+                                .fontWeight(FontWeight.Normal)
                                 .borderRadius(4.px)
                                 .minHeight(60.px)
                                 .boxShadow(0.px, 0.px, 0.px, 0.px, null)
@@ -245,7 +244,6 @@ fun ContactSection2() {
                                 .minHeight(195.px)
                                 .fontFamily(Constants.FONT_FAMILY)
                                 .fontWeight(FontWeight.Normal)
-                                .fontSize(20.px)
                                 .borderRadius(4.px)
                                 .boxShadow(0.px, 0.px, 0.px, 0.px, null)
                                 .attrsModifier {

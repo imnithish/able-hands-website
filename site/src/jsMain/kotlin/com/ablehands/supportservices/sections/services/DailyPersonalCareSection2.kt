@@ -51,7 +51,7 @@ fun DailyPersonalCareSection2() {
         modifier = Modifier
             .id(serviceSection.first)
             .fillMaxWidth()
-            .padding(bottom = if (breakpoint < Breakpoint.MD) 117.px else 53.px)
+            .padding(bottom = if (breakpoint < Breakpoint.MD) 53.px else 75.px)
             .background(Theme.Bg.rgb)
             .maxWidth(Constants.SECTION_WIDTH.px),
         contentAlignment = Alignment.CenterStart
@@ -264,7 +264,7 @@ fun DailyPersonalCareSection2Content(title: String, breakpoint: Breakpoint) {
                 H1(
                     attrs = Modifier
                         .fontFamily(Constants.FONT_FAMILY)
-                        .fontSize(if (breakpoint < Breakpoint.MD) 20.px else 16.px)
+                        .fontSize(if (breakpoint < Breakpoint.MD) 16.px else 20.px)
                         .fontWeight(FontWeight.Normal)
                         .color(Theme.Black.rgb)
                         .toAttrs()

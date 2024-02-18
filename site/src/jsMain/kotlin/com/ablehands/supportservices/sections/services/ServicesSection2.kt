@@ -143,7 +143,7 @@ fun ServicesSection2Content(breakpoint: Breakpoint) {
                     .color(Color.white)
                     .toAttrs()
             ) {
-                Text("We provide support and care in SIL that helps you with daily life in your own house or supported house. We can help you with personal care activities like showering and dressing, help with cooking meals, shopping for groceries, medication management and administration, keeping your home safe and tidy or helping to get to and from appointments.")
+                Text("We provide support and care in SIL that helps you with daily life in your own house or supported house. We can help you with personal care activities like showering and dressing, cooking meals, shopping for groceries, medication management and administration, keeping your home safe and tidy or helping to get to and from appointments.")
             }
 
             if (breakpoint < Breakpoint.MD)
@@ -159,7 +159,7 @@ fun ServicesSection2Content(breakpoint: Breakpoint) {
                     .color(Color.white)
                     .toAttrs()
             ) {
-                Text("AHSS provides participants with higher support needs, such as overnight support, 24/7 care, person-to-person work provided by a support worker, or significant help throughout the day. We provide help and supervision of day-to-day tasks to develop the skills of an individual so they can live as independently as possible. These are supports provided to an NDIS participant in their home and can be in a shared or individual living arrangement.")
+                Text("AHSS provides participants with higher support needs, such as overnight support, 24/7 care, person-to-person work provided by a support worker, or significant help throughout the day. We provide assistance and supervision of day-to-day tasks to develop the skills of an individual so they can live as independently as possible. These are supports provided to an NDIS participant in their home and can be in a shared or individual living arrangement.")
             }
         }
     }
@@ -182,10 +182,8 @@ fun ServicesSection2Content(breakpoint: Breakpoint) {
         silPoints.forEachIndexed { i, it ->
             Column(
                 modifier = Modifier.thenIf(breakpoint < Breakpoint.MD) {
-                    if (i in 0..3)
-                        Modifier.margin(bottom = 32.px) else Modifier
                     if (i == 0 || i == 2 || i == 4)
-                        Modifier.margin(right = 20.px) else Modifier
+                        Modifier.padding(right = 20.px) else Modifier
                 }.thenUnless(
                     breakpoint < Breakpoint.MD
                 ) {
@@ -194,6 +192,9 @@ fun ServicesSection2Content(breakpoint: Breakpoint) {
                 }.thenUnless(breakpoint < Breakpoint.MD) {
                     if (i == 0 || i == 1 || i == 3 || i == 4)
                         Modifier.margin(right = 170.px) else Modifier
+                }.thenIf(breakpoint < Breakpoint.MD) {
+                    if (i in 0..3)
+                        Modifier.margin(bottom = 32.px) else Modifier
                 }
             ) {
                 Image(

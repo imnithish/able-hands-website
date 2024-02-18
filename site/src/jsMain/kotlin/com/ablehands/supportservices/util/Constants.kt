@@ -34,20 +34,9 @@ object Res {
         const val image11 = "image11.jpg"
         const val ndisT = "ndisT.png"
 
-
-        const val imagemain = "imagemain.png"
-        const val imagemainmobile = "imagemainmobile.png"
-        const val image_4 = "image-4.png"
-        const val image_5 = "image-5.png"
-        const val image_5_small = "image-5-small.png"
         const val arrowdown = "arrowdown.svg"
         const val arror_down_black = "arror_down_black.svg"
         const val logo_about = "logo_about.svg"
-        const val image_6 = "image-6.png"
-        const val image_7 = "image-7.png"
-        const val image_9 = "image-9.png"
-        const val image_8_1 = "image-8-1.png"
-        const val image_8_2 = "image-8-2.png"
         const val image_3_icon = "image-3.png"
         const val unsplash_4le7k9xvyje = "unsplash-4le7k9xvyje.png"
 
@@ -70,11 +59,24 @@ object Res {
         val contactWays by lazy {
             listOf(
                 Pair(solar_phone_bold, "+61 451120279"),
-                Pair(tabler_mail_filled_1, "info@ablehands.com.au"),
                 Pair(tabler_mail_filled_1, "contact@ablehands.com.au"),
                 Pair(ion_location, "QLD 4157"),
             )
         }
+
+        // iStock images
+        const val imagemain = "1407581633.png"
+        const val imagemain1 = "1351793636.png"
+        const val imagemain1mobile = "1351793636-mobile.png"
+        const val imagemainmobile = "1407581633-mobile.png"
+        const val image_4 = "1053564580.png"
+        const val image_5 = "1349910331.png"
+        const val image_5_small = "1349910331-mobile.png"
+        const val image_6 = "1290205282.png"
+        const val image_7 = "1435013460.png"
+        const val image_9 = "1367806311.png"
+        const val image_8_1 = "1337208889.png"
+        const val image_8_2 = "1565967923.png"
 
     }
 }
@@ -128,7 +130,7 @@ object Content {
 
     val socialActivitiesAndCommunityAccess = listOf(
         "⦁ Support with individual life skills development and training, including catching public transport.",
-        "⦁ Developing skills for community support in attending social and recreational participation.",
+        "⦁ Developing skills for community support in attending social and recreational activities.",
         "⦁ Train participants in groups to increase their independence in daily personal activities.",
         "⦁ Provide support and assistance with shopping, appointments, and leisure activities."
     )
@@ -186,7 +188,7 @@ object Content {
         ),
         AboutSub(
             "Our Values",
-            listOf("Able Hands Support Service's vision is to create a resilient and empowered community in participation to support people with disabilities to live a great life with choice.")
+            listOf("Empowerment, Dignity, Respect, Trust, integrity and Innovation.")
         )
     )
 
@@ -202,10 +204,13 @@ object Content {
                 "Support with daily living skills such as preparing meals, cleaning and cooking etc."
             ),
             Pair("healthicons-eco-care-outline.svg", "Help with personal care activities."),
-            Pair("fluent-briefcase-medical-16-regular.svg", "Help with personal care activities."),
+            Pair(
+                "fluent-briefcase-medical-16-regular.svg",
+                "Medication management and administration."
+            ),
             Pair(
                 "fluent-mdl2-family.svg",
-                "Support with daily living skills such as preparing meals, cleaning and cooking etc."
+                "Support with community access such as visiting family, attending social activities, etc."
             )
         )
     }
@@ -220,7 +225,7 @@ object Content {
 
     val tailoredPoints by lazy {
         listOf(
-            "If you have been involved in an accident, suffered an injury or have been in hospital for an illness, you may need some support at home for a period of time whilst you get back on your fee.",
+            "If you have been involved in an accident, suffered an injury or have been in hospital for an illness, you may need some support at home for a period of time whilst you get back on your feet.",
             "We work with a number of healthcare providers to support their clients or patients to get back on the road to recovery as quickly as possible.",
             "If you need help transitioning from the hospital to your home, you may need to access our short-term support services. From help with cleaning your home to attending appointments, we can support you."
         )
