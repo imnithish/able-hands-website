@@ -129,7 +129,7 @@ fun MissionSection2() {
                             )
                         }
 
-                        VerticalSpacer(16f)
+                        VerticalSpacer(if (breakpoint<Breakpoint.MD) 4f else 16f)
 
                         it.points.forEach {
                             P(
