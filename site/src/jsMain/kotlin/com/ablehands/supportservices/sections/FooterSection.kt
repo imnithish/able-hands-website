@@ -23,18 +23,7 @@ import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.modifiers.background
-import com.varabyte.kobweb.compose.ui.modifiers.color
-import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
-import com.varabyte.kobweb.compose.ui.modifiers.fontFamily
-import com.varabyte.kobweb.compose.ui.modifiers.fontSize
-import com.varabyte.kobweb.compose.ui.modifiers.fontWeight
-import com.varabyte.kobweb.compose.ui.modifiers.height
-import com.varabyte.kobweb.compose.ui.modifiers.margin
-import com.varabyte.kobweb.compose.ui.modifiers.maxWidth
-import com.varabyte.kobweb.compose.ui.modifiers.padding
-import com.varabyte.kobweb.compose.ui.modifiers.textAlign
-import com.varabyte.kobweb.compose.ui.modifiers.width
+import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.thenIf
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.navigation.OpenLinkStrategy
@@ -105,11 +94,11 @@ fun FooterSection() {
                             modifier = Modifier.thenIf(index != social.size - 1) {
                                 Modifier.margin(right = 20.px)
                             },
-                            path = "https://github.com/imnithish",
+                            path = s.second,
                             openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB
                         ) {
                             Image(
-                                src = s,
+                                src = s.first,
                                 width = 40,
                                 height = 40
                             )
@@ -247,11 +236,11 @@ fun FooterSection() {
                                     modifier = Modifier.thenIf(index != social.size - 1) {
                                         Modifier.margin(right = 20.px)
                                     },
-                                    path = "https://github.com/imnithish",
+                                    path = s.second,
                                     openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB
                                 ) {
                                     Image(
-                                        src = s,
+                                        src = s.first,
                                         width = 56,
                                         height = 56
                                     )

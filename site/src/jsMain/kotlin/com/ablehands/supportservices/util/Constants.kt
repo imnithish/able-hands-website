@@ -52,13 +52,15 @@ object Res {
 
         val social by lazy {
             listOf(
-                fb, insta, x
+                Pair(fb, "https://www.facebook.com/ablehands.ss"),
+                Pair(insta, "https://www.instagram.com/ablehands.ss/"),
+                Pair(x, "https://twitter.com/ablehands_")
             )
         }
 
         val contactWays by lazy {
             listOf(
-                Pair(solar_phone_bold, "+61 451120279"),
+//                Pair(solar_phone_bold, "+61 451120279"),
                 Pair(tabler_mail_filled_1, "contact@ablehands.com.au"),
                 Pair(ion_location, "QLD 4157"),
             )
@@ -78,6 +80,7 @@ object Res {
         const val image_8_1 = "1337208889.png"
         const val image_8_2 = "1565967923.png"
 
+        const val formspree = "https://formspree.io/f/mbjnyevn"
     }
 }
 

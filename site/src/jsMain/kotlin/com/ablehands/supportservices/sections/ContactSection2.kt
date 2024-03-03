@@ -15,6 +15,7 @@ import com.ablehands.supportservices.models.Theme
 import com.ablehands.supportservices.styles.InputStyle
 import com.ablehands.supportservices.styles.MainButtonStyle
 import com.ablehands.supportservices.util.Constants
+import com.ablehands.supportservices.util.Res.Image.formspree
 import com.ablehands.supportservices.util.Res.Image.unsplash_4le7k9xvyje
 import com.varabyte.kobweb.compose.css.Cursor
 import com.varabyte.kobweb.compose.css.FontWeight
@@ -80,7 +81,7 @@ fun ContactSection2() {
                 VerticalSpacer(24f)
 
                 Form(
-                    action = "https://formspree.io/f/xzbllejd",
+                    action = formspree,
                     attrs = Modifier
                         .fillMaxWidth()
                         .attrsModifier {
@@ -192,7 +193,7 @@ fun ContactSection2() {
                     VerticalSpacer(72f)
 
                     Form(
-                        action = "https://formspree.io/f/xzbllejd",
+                        action = formspree,
                         attrs = Modifier
                             .fillMaxWidth()
                             .attrsModifier {
