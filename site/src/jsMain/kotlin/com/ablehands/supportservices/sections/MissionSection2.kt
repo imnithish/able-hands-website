@@ -44,7 +44,7 @@ fun MissionSection2() {
 
     val iconImageSize: Pair<Int, Int> = remember(breakpoint) {
         if (breakpoint < Breakpoint.MD)
-            Pair(85, 80) else Pair(139, 131)
+            Pair(85, 80) else Pair(169, 161)
     }
 
     val contentSizes = remember(breakpoint) {
