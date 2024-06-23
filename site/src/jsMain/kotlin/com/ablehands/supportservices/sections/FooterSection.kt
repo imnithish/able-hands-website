@@ -32,6 +32,7 @@ import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.Text
 
@@ -130,18 +131,33 @@ fun FooterSection() {
                             src = it.first
                         )
 
-                        H1(
-                            attrs = Modifier
-                                .fontFamily(Constants.FONT_FAMILY)
-                                .fontSize(16.px)
-                                .margin(left = 10.px)
-                                .fontWeight(FontWeight.Normal)
-                                .color(Theme.Black.rgb)
-                                .toAttrs()
-                        ) {
-                            Text(it.second)
-                        }
+                        if (it.second.contains("+61")){
+                            A(
+                                href = "tel:${it.second.trim()}",
+                                attrs = Modifier
+                                    .fontFamily(Constants.FONT_FAMILY)
+                                    .fontSize(16.px)
+                                    .margin(left = 10.px)
+                                    .fontWeight(FontWeight.Normal)
+                                    .color(Theme.Black.rgb)
+                                    .toAttrs()
+                            ){
+                                Text(it.second)
 
+                            }
+                        }else{
+                            H1(
+                                attrs = Modifier
+                                    .fontFamily(Constants.FONT_FAMILY)
+                                    .fontSize(16.px)
+                                    .margin(left = 10.px)
+                                    .fontWeight(FontWeight.Normal)
+                                    .color(Theme.Black.rgb)
+                                    .toAttrs()
+                            ) {
+                                Text(it.second)
+                            }
+                        }
                     }
                 }
 

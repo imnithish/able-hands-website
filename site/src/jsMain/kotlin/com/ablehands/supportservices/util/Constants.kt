@@ -64,7 +64,7 @@ object Res {
                 Pair(solar_phone_bold, "+61 425131663"),
                 Pair(tabler_mail_filled_1, "contact@ablehands.com.au"),
                 Pair(tabler_mail_filled_1, "info@ablehands.com.au"),
-                Pair(ion_location, "QLD 4157"),
+                Pair(ion_location, "30 Ingham Street\nCapalaba QLD 4157"),
             )
         }
 
