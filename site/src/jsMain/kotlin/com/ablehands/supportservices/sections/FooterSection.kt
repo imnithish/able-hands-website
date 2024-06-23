@@ -131,7 +131,7 @@ fun FooterSection() {
                             src = it.first
                         )
 
-                        if (it.second.contains("+61")){
+                        if (it.second.contains("+61")) {
                             A(
                                 href = "tel:${it.second.trim()}",
                                 attrs = Modifier
@@ -141,11 +141,24 @@ fun FooterSection() {
                                     .fontWeight(FontWeight.Normal)
                                     .color(Theme.Black.rgb)
                                     .toAttrs()
-                            ){
+                            ) {
                                 Text(it.second)
 
                             }
-                        }else{
+                        } else if (it.second.contains(".com")) {
+                            A(
+                                href = "mailto:${it.second.trim()}",
+                                attrs = Modifier
+                                    .fontFamily(Constants.FONT_FAMILY)
+                                    .fontSize(16.px)
+                                    .margin(left = 10.px)
+                                    .fontWeight(FontWeight.Normal)
+                                    .color(Theme.Black.rgb)
+                                    .toAttrs()
+                            ) {
+                                Text(it.second)
+                            }
+                        } else {
                             H1(
                                 attrs = Modifier
                                     .fontFamily(Constants.FONT_FAMILY)
