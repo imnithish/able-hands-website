@@ -15,14 +15,11 @@ import com.ablehands.supportservices.models.Section
 import com.ablehands.supportservices.models.Theme
 import com.ablehands.supportservices.util.Constants
 import com.ablehands.supportservices.util.Content.aboutSub
-import com.ablehands.supportservices.util.Res
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
-import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.*
 import com.varabyte.kobweb.compose.ui.modifiers.*
-import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
@@ -37,15 +34,15 @@ fun MissionSection2() {
 
     val breakpoint = rememberBreakpoint()
 
-    val subImageSize: Pair<Int, Int> = remember(breakpoint) {
-        if (breakpoint < Breakpoint.MD)
-            Pair(241, 167) else Pair(896, 435)
-    }
-
-    val iconImageSize: Pair<Int, Int> = remember(breakpoint) {
-        if (breakpoint < Breakpoint.MD)
-            Pair(85, 80) else Pair(169, 161)
-    }
+//    val subImageSize: Pair<Int, Int> = remember(breakpoint) {
+//        if (breakpoint < Breakpoint.MD)
+//            Pair(241, 167) else Pair(896, 435)
+//    }
+//
+//    val iconImageSize: Pair<Int, Int> = remember(breakpoint) {
+//        if (breakpoint <= Breakpoint.MD)
+//            Pair(171, 55) else Pair(245, 79)
+//    }
 
     val contentSizes = remember(breakpoint) {
         if (breakpoint < Breakpoint.MD) 14.px else 20.px
@@ -70,25 +67,25 @@ fun MissionSection2() {
                     Modifier.padding(bottom = 85f.px)
             ),
         ) {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Theme.AboutSecondaryLight.rgb)
-            ) {
-                Image(
-                    src =if (breakpoint<Breakpoint.MD) Res.Image.image_5_small else Res.Image.image_5,
-                    width = subImageSize.first,
-                    height = subImageSize.second
-                )
-
-                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    Image(
-                        src = Res.Image.logoT,
-                        width = iconImageSize.first,
-                        height = iconImageSize.second
-                    )
-                }
-            }
+//            Row(
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .background(Theme.AboutSecondaryLight.rgb)
+//            ) {
+//                Image(
+//                    src =if (breakpoint<Breakpoint.MD) Res.Image.image_5_small else Res.Image.image_5,
+//                    width = subImageSize.first,
+//                    height = subImageSize.second
+//                )
+//
+//                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+//                    Image(
+//                        src = Res.Image.logo,
+//                        width = iconImageSize.first,
+//                        height = iconImageSize.second
+//                    )
+//                }
+//            }
 
             VerticalSpacer(if (breakpoint < Breakpoint.MD) 32f else 85f)
 

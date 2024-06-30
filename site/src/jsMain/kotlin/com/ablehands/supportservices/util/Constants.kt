@@ -19,7 +19,7 @@ object Res {
     }
 
     object Image {
-        const val logo = "logo.png"
+        const val logo = "logo_2.png"
         const val logoT = "image-1-3.png"
         const val hambutton = "hambutton.svg"
         const val unnamed = "unnamed.jpg"

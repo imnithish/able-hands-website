@@ -60,31 +60,58 @@ fun FooterSection() {
 
                 Image(
                     modifier = Modifier
-                        .width(85.px)
-                        .height(80.px),
-                    src = Res.Image.logoT
+                        .width(180.px)
+                        .height(58.px),
+                    src = Res.Image.logo
                 )
                 VerticalSpacer(8f)
+//                H1(
+//                    attrs = Modifier
+//                        .fontFamily(Constants.FONT_FAMILY)
+//                        .fontSize(16.px)
+//                        .fontWeight(FontWeight.Bold)
+//                        .color(Theme.Primary.rgb)
+//                        .toAttrs()
+//                ) {
+//                    Text("ABLE HANDS")
+//                }
+//                VerticalSpacer(1f)
+
                 H1(
                     attrs = Modifier
                         .fontFamily(Constants.FONT_FAMILY)
-                        .fontSize(16.px)
+                        .fontSize(14.px)
                         .fontWeight(FontWeight.Bold)
                         .color(Theme.Primary.rgb)
                         .toAttrs()
                 ) {
-                    Text("ABLE HANDS")
+                    Text("DISABILITY SERVICES &")
                 }
-                VerticalSpacer(1f)
+
+//                VerticalSpacer(1f)
                 H1(
                     attrs = Modifier
                         .fontFamily(Constants.FONT_FAMILY)
-                        .fontSize(16.px)
+                        .fontSize(14.px)
                         .fontWeight(FontWeight.Bold)
                         .color(Theme.Primary.rgb)
+                        .textAlign(TextAlign.Center)
                         .toAttrs()
                 ) {
-                    Text("SUPPORT SERVICES")
+                    Text("NURSING CARE")
+                }
+
+//                VerticalSpacer(1f)
+                H1(
+                    attrs = Modifier
+                        .fontFamily(Constants.FONT_FAMILY)
+                        .fontSize(14.px)
+                        .fontWeight(FontWeight.Bold)
+                        .color(Theme.Primary.rgb)
+                        .textAlign(TextAlign.Center)
+                        .toAttrs()
+                ) {
+                    Text("ORGANISATION")
                 }
 
                 VerticalSpacer(16f)
@@ -107,7 +134,7 @@ fun FooterSection() {
                     }
                 }
 
-                VerticalSpacer(36f)
+                VerticalSpacer(24f)
 
                 Image(
                     modifier = Modifier
@@ -116,7 +143,7 @@ fun FooterSection() {
                     src = Res.Image.ndisT
                 )
 
-                VerticalSpacer(69f)
+                VerticalSpacer(24f)
 
                 contactWays.forEachIndexed { i, it ->
                     Row(
@@ -166,6 +193,7 @@ fun FooterSection() {
                                     .margin(left = 10.px)
                                     .fontWeight(FontWeight.Normal)
                                     .color(Theme.Black.rgb)
+                                    .textAlign(TextAlign.Center)
                                     .toAttrs()
                             ) {
                                 Text(it.second)
@@ -218,31 +246,43 @@ fun FooterSection() {
                     Column {
                         Image(
                             modifier = Modifier
-                                .width(139.px)
-                                .height(131.px),
-                            src = Res.Image.logoT
+                                .width(245.px)
+                                .height(79.px),
+                            src = Res.Image.logo
                         )
                         VerticalSpacer(15f)
+//                        H1(
+//                            attrs = Modifier
+//                                .fontFamily(Constants.FONT_FAMILY)
+//                                .fontSize(20.px)
+//                                .fontWeight(FontWeight.Bold)
+//                                .color(Theme.Primary.rgb)
+//                                .toAttrs()
+//                        ) {
+//                            Text("ABLE HANDS")
+//                        }
+//                        VerticalSpacer(2f)
                         H1(
                             attrs = Modifier
                                 .fontFamily(Constants.FONT_FAMILY)
-                                .fontSize(24.px)
+                                .fontSize(18.px)
                                 .fontWeight(FontWeight.Bold)
                                 .color(Theme.Primary.rgb)
                                 .toAttrs()
                         ) {
-                            Text("ABLE HANDS")
+                            Text("DISABILITY SERVICES &")
                         }
+
                         VerticalSpacer(2f)
                         H1(
                             attrs = Modifier
                                 .fontFamily(Constants.FONT_FAMILY)
-                                .fontSize(24.px)
+                                .fontSize(18.px)
                                 .fontWeight(FontWeight.Bold)
                                 .color(Theme.Primary.rgb)
                                 .toAttrs()
                         ) {
-                            Text("SUPPORT SERVICES")
+                            Text("NURSING CARE ORGANISATION")
                         }
                     }
 
