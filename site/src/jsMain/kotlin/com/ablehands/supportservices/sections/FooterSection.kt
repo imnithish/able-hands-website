@@ -14,6 +14,7 @@ import com.ablehands.supportservices.models.Theme
 import com.ablehands.supportservices.util.Constants
 import com.ablehands.supportservices.util.Res
 import com.ablehands.supportservices.util.Res.Image.contactWays
+import com.ablehands.supportservices.util.Res.Image.locationUrl
 import com.ablehands.supportservices.util.Res.Image.social
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextAlign
@@ -186,17 +187,22 @@ fun FooterSection() {
                                 Text(it.second)
                             }
                         } else {
-                            H1(
-                                attrs = Modifier
-                                    .fontFamily(Constants.FONT_FAMILY)
-                                    .fontSize(16.px)
-                                    .margin(left = 10.px)
-                                    .fontWeight(FontWeight.Normal)
-                                    .color(Theme.Black.rgb)
-                                    .textAlign(TextAlign.Center)
-                                    .toAttrs()
+                            Link(
+                                modifier = Modifier.margin(left = 10.px),
+                                path = locationUrl,
+                                openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB
                             ) {
-                                Text(it.second)
+                                H1(
+                                    attrs = Modifier
+                                        .fontFamily(Constants.FONT_FAMILY)
+                                        .fontSize(16.px)
+                                        .fontWeight(FontWeight.Normal)
+                                        .color(Theme.Black.rgb)
+                                        .textAlign(TextAlign.Center)
+                                        .toAttrs()
+                                ) {
+                                    Text(it.second)
+                                }
                             }
                         }
                     }
@@ -333,17 +339,35 @@ fun FooterSection() {
                                     src = it.first
                                 )
 
-                                H1(
-                                    attrs = Modifier
-                                        .fontFamily(Constants.FONT_FAMILY)
-                                        .fontSize(20.px)
-                                        .margin(left = 10.px)
-                                        .fontWeight(FontWeight.Normal)
-                                        .color(Theme.Black.rgb)
-                                        .toAttrs()
-                                ) {
-                                    Text(it.second)
-                                }
+                                if (it.second.contains("4157")) {
+                                    Link(
+                                        modifier = Modifier.margin(left = 10.px),
+                                        path = locationUrl,
+                                        openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB
+                                    ) {
+                                        H1(
+                                            attrs = Modifier
+                                                .fontFamily(Constants.FONT_FAMILY)
+                                                .fontSize(20.px)
+                                                .fontWeight(FontWeight.Normal)
+                                                .color(Theme.Black.rgb)
+                                                .toAttrs()
+                                        ) {
+                                            Text(it.second)
+                                        }
+                                    }
+                                } else
+                                    H1(
+                                        attrs = Modifier
+                                            .fontFamily(Constants.FONT_FAMILY)
+                                            .fontSize(20.px)
+                                            .margin(left = 10.px)
+                                            .fontWeight(FontWeight.Normal)
+                                            .color(Theme.Black.rgb)
+                                            .toAttrs()
+                                    ) {
+                                        Text(it.second)
+                                    }
 
                             }
                         }

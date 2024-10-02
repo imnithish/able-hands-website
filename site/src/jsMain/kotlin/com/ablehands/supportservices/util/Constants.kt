@@ -52,7 +52,7 @@ object Res {
 
         val social by lazy {
             listOf(
-                Pair(fb, "https://www.facebook.com/ablehands.ss"),
+                Pair(fb, "https://www.facebook.com/share/agtfKiY9B6toe236/?mibextid=LQQJ4d "),
                 Pair(insta, "https://www.instagram.com/ablehands.ss/"),
                 Pair(x, "https://twitter.com/ablehands_")
             )
@@ -60,13 +60,15 @@ object Res {
 
         val contactWays by lazy {
             listOf(
-                Pair(solar_phone_bold, "+61 731341027"),
+//                Pair(solar_phone_bold, "+61 731341027"),
                 Pair(solar_phone_bold, "+61 425131663"),
                 Pair(tabler_mail_filled_1, "contact@ablehands.com.au"),
                 Pair(tabler_mail_filled_1, "info@ablehands.com.au"),
                 Pair(ion_location, "30 Ingham Street\nCapalaba QLD 4157"),
             )
         }
+
+        const val locationUrl = "https://maps.app.goo.gl/ni6iWnM5eC9up5Wo9"
 
         // iStock images
         const val imagemain = "1407581633.png"

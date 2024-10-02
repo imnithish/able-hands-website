@@ -9,12 +9,9 @@
 package com.ablehands.supportservices.components
 
 import androidx.compose.runtime.*
-import com.ablehands.supportservices.models.Section
 import com.ablehands.supportservices.models.Theme
 import com.ablehands.supportservices.styles.NavigationItemStyle
-import com.ablehands.supportservices.styles.PhoneNumberStyle
 import com.ablehands.supportservices.util.Constants.FONT_FAMILY
-import com.ablehands.supportservices.util.Content
 import com.ablehands.supportservices.util.Content.servicesExpanded
 import com.ablehands.supportservices.util.Res
 import com.varabyte.kobweb.compose.css.*
@@ -32,8 +29,6 @@ import com.varabyte.kobweb.core.rememberPageContext
 import com.varabyte.kobweb.navigation.OpenLinkStrategy
 import com.varabyte.kobweb.navigation.toOpenLinkStrategy
 import com.varabyte.kobweb.silk.components.graphics.Image
-import com.varabyte.kobweb.silk.components.icons.fa.FaEnvelope
-import com.varabyte.kobweb.silk.components.icons.fa.FaPhone
 import com.varabyte.kobweb.silk.components.icons.fa.FaXmark
 import com.varabyte.kobweb.silk.components.icons.fa.IconSize
 import com.varabyte.kobweb.silk.components.navigation.Link
@@ -112,7 +107,7 @@ fun OverflowMenu(onMenuClosed: (Boolean) -> Unit) {
                     size = IconSize.LG
                 )
                 Image(
-                    modifier = Modifier.size(80.px),
+                    modifier = Modifier.height(58.px).width(180.px),
                     src = Res.Image.logo
                 )
             }
