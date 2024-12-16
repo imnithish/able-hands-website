@@ -33,6 +33,8 @@ import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
+import kotlinx.browser.document
+import kotlinx.browser.window
 import kotlinx.coroutines.delay
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.H1
@@ -40,6 +42,7 @@ import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun MainSection(onMenuClicked: (Boolean) -> Unit) {
+
     var mainImage by remember { mutableStateOf(Res.Image.imagemain) }
     var currMainImage by remember {
         mutableStateOf(1)

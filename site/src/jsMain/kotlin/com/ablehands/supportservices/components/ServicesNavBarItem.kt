@@ -33,7 +33,8 @@ import org.jetbrains.compose.web.dom.Text
 fun ServicesNavBarItem(
     mainText: String,
     href: String,
-    servicesExpanded: List<Pair<String, String>>
+    servicesExpanded: List<Pair<String, String>>,
+    navToRoot: Boolean = false
 ) {
     Div(
         attrs = NavStyle.toModifier()
@@ -69,7 +70,7 @@ fun ServicesNavBarItem(
                         .width(Width.FitContent)
                         .toAttrs()
                 ) {
-                    ServicesDropdown(servicesExpanded)
+                    ServicesDropdown(servicesExpanded, navToRoot)
                 }
             }
         }
@@ -78,7 +79,10 @@ fun ServicesNavBarItem(
 
 
 @Composable
-fun ServicesDropdown(servicesExpanded: List<Pair<String, String>>) {
+fun ServicesDropdown(
+    servicesExpanded: List<Pair<String, String>>,
+    navToRoot: Boolean = false
+) {
     Column(
         modifier = NavStyle.toModifier()
             .classNames("drop-item")
@@ -97,10 +101,10 @@ fun ServicesDropdown(servicesExpanded: List<Pair<String, String>>) {
                     modifier = NavigationItemStyle.toModifier()
                         .fontFamily(Constants.FONT_FAMILY)
                         .fontSize(20.px)
-                        .padding(top=8.px)
+                        .padding(top = 8.px)
                         .fontWeight(FontWeight.Medium)
                         .textDecorationLine(TextDecorationLine.None),
-                    path = "#${service.first}",
+                    path = if (service.first.startsWith('/')) service.first else if (navToRoot) "/#${service.first}" else "#${service.first}",
                     text = service.second
                 )
             }

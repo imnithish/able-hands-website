@@ -85,6 +85,10 @@ object Res {
         const val image_8_2 = "1565967923.png"
 
         const val formspree = "https://formspree.io/f/mbjnyevn"
+
+        const val accommodationmain = "accommodationmain.png"
+        const val accommodationmobile = "accommodationmobile.png"
+
     }
 }
 
@@ -178,6 +182,7 @@ object Content {
             "Assistance with travel and transport arrangements"
         ),
         Pair("community_nursing_care", "Community nursing care"),
+        Pair("/sil-accommodation", "SIL Accommodation")
     )
 
     val aboutSub = listOf(
@@ -237,6 +242,15 @@ object Content {
             "If you need help transitioning from the hospital to your home, you may need to access our short-term support services. From help with cleaning your home to attending appointments, we can support you."
         )
     }
+
+    val silAccommodationFeatures = listOf(
+        "⦁ Wheelchair friendly.",
+        "⦁ 4 bedrooms, 2 bathrooms.",
+        "⦁ 2 parking spaces.",
+        "⦁ Outdoor area.",
+        "⦁ Fully fenced.",
+        "⦁ Pet friendly.",
+    )
 }
 
 data class AboutSub(

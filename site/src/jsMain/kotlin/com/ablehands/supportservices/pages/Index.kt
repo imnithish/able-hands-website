@@ -9,20 +9,14 @@
 package com.ablehands.supportservices.pages
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import com.ablehands.supportservices.components.BackToTopButton
 import com.ablehands.supportservices.components.OverflowMenu
-import com.ablehands.supportservices.sections.AboutSection
-import com.ablehands.supportservices.sections.AboutSection2
-import com.ablehands.supportservices.sections.ContactSection
-import com.ablehands.supportservices.sections.ContactSection2
-import com.ablehands.supportservices.sections.FooterSection
-import com.ablehands.supportservices.sections.MainSection
-import com.ablehands.supportservices.sections.MissionSection
-import com.ablehands.supportservices.sections.MissionSection2
-import com.ablehands.supportservices.sections.TailoredSection
+import com.ablehands.supportservices.sections.*
 import com.ablehands.supportservices.sections.services.*
+import com.ablehands.supportservices.util.scrollToSectionFromHash
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -31,11 +25,18 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
 import com.varabyte.kobweb.compose.ui.modifiers.height
 import com.varabyte.kobweb.core.Page
+import kotlinx.browser.document
+import kotlinx.browser.window
 import org.jetbrains.compose.web.css.px
 
 @Page
 @Composable
 fun HomePage() {
+
+    LaunchedEffect(window.location.hash) {
+        scrollToSectionFromHash()
+    }
+
     val (menuOpened, setMenuOpened) = remember { mutableStateOf(false) }
 
     Box(modifier = Modifier.fillMaxSize()) {

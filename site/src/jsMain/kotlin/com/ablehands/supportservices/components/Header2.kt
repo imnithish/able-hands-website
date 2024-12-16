@@ -25,6 +25,7 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.core.init.KobwebConfig
 import com.varabyte.kobweb.core.rememberPageContext
@@ -34,12 +35,13 @@ import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
+import org.jetbrains.compose.web.css.cursor
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Button
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
-fun Header2(onMenuClicked: (Boolean) -> Unit) {
+fun Header2(onMenuClicked: (Boolean) -> Unit, navToRoot: Boolean = false) {
     val breakpoint = rememberBreakpoint()
     val ctx = rememberPageContext()
 
@@ -69,7 +71,8 @@ fun Header2(onMenuClicked: (Boolean) -> Unit) {
                         "services" -> ServicesNavBarItem(
                             mainText = section.titleVariant,
                             href = section.path,
-                            Content.servicesExpanded
+                            Content.servicesExpanded,
+                            navToRoot = navToRoot
                         )
 
                         "contact" -> {
@@ -110,7 +113,7 @@ fun Header2(onMenuClicked: (Boolean) -> Unit) {
                                     .fontWeight(FontWeight.Medium)
                                     .margin(right = if (index == 3) 0.px else 48.px)
                                     .textDecorationLine(TextDecorationLine.None),
-                                path = section.path,
+                                path = if (navToRoot) "/${section.path}" else section.path,
                                 text = section.titleVariant
                             )
                         }
@@ -127,12 +130,19 @@ fun AbleLogo(breakpoint: Breakpoint) {
             Pair(180.px, 58.px) else Pair(245.px, 79.px)
     }
 
+    val ctx = rememberPageContext()
+
     Image(
         modifier = Modifier
             .width(widthAndHeight.first)
             .height(widthAndHeight.second)
-            .margin(left = if (breakpoint <= Breakpoint.MD) 20.px else 64.px),
-        src = Res.Image.logo
+            .margin(left = if (breakpoint <= Breakpoint.MD) 20.px else 64.px)
+            .onClick {
+                ctx.router.navigateTo("/")
+            }.styleModifier {
+                cursor("pointer")
+            },
+        src = Res.Image.logo,
     )
 }
 
