@@ -251,6 +251,9 @@ object Content {
         "⦁ Fully fenced.",
         "⦁ Pet friendly.",
     )
+
+    val silAccommodationImages = listOf("silacc0.jpg", "silacc02.jpg", "silacc03.jpg", "silacc04.jpg")
+
 }
 
 data class AboutSub(

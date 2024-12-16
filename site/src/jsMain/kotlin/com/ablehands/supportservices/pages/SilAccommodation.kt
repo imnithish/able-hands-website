@@ -18,9 +18,9 @@ import com.ablehands.supportservices.models.Theme
 import com.ablehands.supportservices.sections.ContactSection2
 import com.ablehands.supportservices.sections.FooterSection
 import com.ablehands.supportservices.sections.accommodation.AccommodationContent
+import com.ablehands.supportservices.sections.accommodation.AccommodationGallery
 import com.ablehands.supportservices.sections.accommodation.AccommodationImage
 import com.ablehands.supportservices.util.Constants
-import com.ablehands.supportservices.util.Res
 import com.ablehands.supportservices.util.Res.Image.ion_location
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextAlign
@@ -41,10 +41,6 @@ import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.Text
-
-
-//ctx.router.navigateTo("/#contact")
-
 
 @Page(routeOverride = "sil-accommodation")
 @Composable
@@ -112,8 +108,11 @@ fun SilAccommodationPage() {
 
             AccommodationContent()
 
-            VerticalSpacer(32f)
+            VerticalSpacer(if (breakpoint < Breakpoint.MD) 32f else 42f)
 
+            AccommodationGallery()
+
+            VerticalSpacer(32f)
 
             ContactSection2(
                 heading = "Interested in this property? Get in touch for more information.",
