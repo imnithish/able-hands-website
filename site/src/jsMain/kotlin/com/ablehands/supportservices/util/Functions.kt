@@ -38,3 +38,11 @@ fun ObserveViewportEntered(
         }
     }
 }
+
+fun scrollToSectionFromHash() {
+    val hash = window.location.hash.removePrefix("#")
+    if (hash.isNotBlank()) {
+        val element = document.getElementById(hash)
+        element?.scrollIntoView(js("{ behavior: 'smooth', block: 'start' }"))
+    }
+}

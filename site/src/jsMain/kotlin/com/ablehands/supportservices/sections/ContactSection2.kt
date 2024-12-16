@@ -38,7 +38,7 @@ import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.*
 
 @Composable
-fun ContactSection2() {
+fun ContactSection2(heading: String = "Connect with Us", showImage: Boolean = true) {
     val breakpoint = rememberBreakpoint()
 
     Box(
@@ -61,11 +61,14 @@ fun ContactSection2() {
                 ),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Image(
-                    src = unsplash_4le7k9xvyje,
-                    modifier = Modifier.fillMaxWidth()
-                )
-                VerticalSpacer(40f)
+
+                if (showImage) {
+                    Image(
+                        src = unsplash_4le7k9xvyje,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    VerticalSpacer(40f)
+                }
 
                 H1(
                     attrs = Modifier
@@ -75,7 +78,7 @@ fun ContactSection2() {
                         .color(Theme.Black.rgb)
                         .toAttrs()
                 ) {
-                    Text("Connect with Us")
+                    Text(heading)
                 }
 
                 VerticalSpacer(24f)
@@ -171,7 +174,7 @@ fun ContactSection2() {
                 modifier = Modifier.fillMaxWidth().padding(
                     left = 64.px, right = 64.px
                 ),
-                horizontalArrangement = Arrangement.SpaceBetween,
+                horizontalArrangement = if (!showImage) Arrangement.Center else Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Column(
@@ -182,15 +185,15 @@ fun ContactSection2() {
                     H1(
                         attrs = Modifier
                             .fontFamily(Constants.FONT_FAMILY)
-                            .fontSize(40.px)
+                            .fontSize(if (!showImage) 28.px else 40.px)
                             .fontWeight(FontWeight.Bold)
                             .color(Theme.Black.rgb)
                             .toAttrs()
                     ) {
-                        Text("Connect with Us")
+                        Text(heading)
                     }
 
-                    VerticalSpacer(72f)
+                    VerticalSpacer(44f)
 
                     Form(
                         action = formspree,
@@ -279,11 +282,12 @@ fun ContactSection2() {
                     }
                 }
 
-                Image(
-                    src = unsplash_4le7k9xvyje,
-                    width = 604,
-                    height = 385
-                )
+                if (showImage)
+                    Image(
+                        src = unsplash_4le7k9xvyje,
+                        width = 604,
+                        height = 385
+                    )
             }
 
         }

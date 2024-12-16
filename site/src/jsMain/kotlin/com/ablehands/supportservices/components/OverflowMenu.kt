@@ -43,7 +43,7 @@ import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
-fun OverflowMenu(onMenuClosed: (Boolean) -> Unit) {
+fun OverflowMenu(onMenuClosed: (Boolean) -> Unit, navToRoot: Boolean = false) {
     val scope = rememberCoroutineScope()
     val breakpoint = rememberBreakpoint()
     var translateX by remember { mutableStateOf((-100).percent) }
@@ -126,7 +126,7 @@ fun OverflowMenu(onMenuClosed: (Boolean) -> Unit) {
                             onMenuClosed(false)
                         }
                     },
-                path = "#about",
+                path = if (navToRoot) "/#about" else "#about",
                 text = "About US",
                 openInternalLinksStrategy = OpenLinkStrategy.IN_PLACE
             )
@@ -146,7 +146,7 @@ fun OverflowMenu(onMenuClosed: (Boolean) -> Unit) {
                             onMenuClosed(false)
                         }
                     },
-                path = "#mission",
+                path = if (navToRoot) "/#mission" else "#mission",
                 text = "Our Mission",
                 openInternalLinksStrategy = OpenLinkStrategy.IN_PLACE
             )
@@ -188,7 +188,7 @@ fun OverflowMenu(onMenuClosed: (Boolean) -> Unit) {
                                     onMenuClosed(false)
                                 }
                             },
-                        path = "#" + it.first,
+                        path = if (it.first.startsWith('/')) it.first else if (navToRoot) "/#${it.first}" else "#" + it.first,
                         text = it.second,
                         openInternalLinksStrategy = OpenLinkStrategy.IN_PLACE
                     )
