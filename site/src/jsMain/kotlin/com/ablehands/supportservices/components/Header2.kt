@@ -63,7 +63,7 @@ fun Header2(onMenuClicked: (Boolean) -> Unit, navToRoot: Boolean = false) {
             HamButton(onMenuClicked)
         else
             Row(
-                modifier = Modifier.margin(leftRight = 35.px),
+                modifier = Modifier.margin(left = 36.px, right = 154.px),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Section.entries.filterNot { it.id == "main" }.forEachIndexed { index, section ->

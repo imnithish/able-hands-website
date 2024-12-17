@@ -83,24 +83,20 @@ fun SilAccommodationPage() {
                     src = ion_location
                 )
 
-                Link(
-                    modifier = Modifier.margin(left = 10.px, top = 10.px),
-                    path = "Res.Image.locationUrl",
-                    openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB
+
+                H1(
+                    attrs = Modifier
+                        .fontFamily(Constants.FONT_FAMILY)
+                        .fontSize(if (breakpoint < Breakpoint.MD) 16.px else 20.px)
+                        .fontWeight(FontWeight.Normal)
+                        .color(Theme.Black.rgb)
+                        .textAlign(TextAlign.Center)
+                        .margin(left = 10.px, top = 10.px)
+                        .toAttrs()
                 ) {
-                    H1(
-                        attrs = Modifier
-                            .fontFamily(Constants.FONT_FAMILY)
-                            .fontSize(if (breakpoint < Breakpoint.MD) 16.px else 20.px)
-                            .fontWeight(FontWeight.Normal)
-                            .color(Theme.Black.rgb)
-                            .textAlign(TextAlign.Center)
-                            .toAttrs()
-                    ) {
-                        Text(
-                            "28 Fiddlewood Street, Redland Bay QLD 4165"
-                        )
-                    }
+                    Text(
+                        "Victoria Point 4165"
+                    )
                 }
             }
 

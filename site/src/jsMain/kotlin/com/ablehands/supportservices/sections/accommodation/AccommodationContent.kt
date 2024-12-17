@@ -18,6 +18,7 @@ import com.ablehands.supportservices.util.Content.silAccommodationFeatures
 import com.ablehands.supportservices.util.Res
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextAlign
+import com.varabyte.kobweb.compose.css.margin
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -92,13 +93,16 @@ fun AccommodationContent() {
             ),
             numColumns = numColumns(base = 2, md = 2),
         ) {
-            silAccommodationFeatures.forEachIndexed { _, s ->
+            silAccommodationFeatures.forEachIndexed { i, s ->
                 P(
                     attrs = Modifier
                         .fontFamily(Constants.FONT_FAMILY)
                         .fontSize(if (breakpoint < Breakpoint.MD) 16.px else 20.px)
                         .fontWeight(FontWeight.Normal)
                         .color(Theme.GrayVariant.rgb)
+                        .thenIf(i % 2 == 0) {
+                            Modifier.margin(right = 12.px)
+                        }
                         .toAttrs()
                 ) {
                     Text(s)
