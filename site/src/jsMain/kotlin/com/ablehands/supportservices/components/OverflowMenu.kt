@@ -9,6 +9,7 @@
 package com.ablehands.supportservices.components
 
 import androidx.compose.runtime.*
+import com.ablehands.supportservices.models.Section
 import com.ablehands.supportservices.models.Theme
 import com.ablehands.supportservices.styles.NavigationItemStyle
 import com.ablehands.supportservices.util.Constants.FONT_FAMILY
@@ -175,11 +176,12 @@ fun OverflowMenu(onMenuClosed: (Boolean) -> Unit, navToRoot: Boolean = false) {
                 servicesExpanded.forEach {
                     Link(
                         modifier = NavigationItemStyle.toModifier()
-                            .margin(bottom = 24.px)
+                            .margin(bottom = 20.px)
                             .fontFamily(FONT_FAMILY)
-                            .fontSize(18.px)
+                            .fontSize(16.px)
                             .fontWeight(FontWeight.Medium)
                             .textDecorationLine(TextDecorationLine.None)
+                            .color(Theme.GrayVariant.rgb)
                             .onClick {
                                 scope.launch {
                                     translateX = (-100).percent
@@ -194,6 +196,26 @@ fun OverflowMenu(onMenuClosed: (Boolean) -> Unit, navToRoot: Boolean = false) {
                     )
                 }
             }
+
+            Link(
+                modifier = NavigationItemStyle.toModifier()
+                    .margin(bottom = 24.px, top=4.px)
+                    .fontFamily(FONT_FAMILY)
+                    .fontSize(20.px)
+                    .fontWeight(FontWeight.Medium)
+                    .textDecorationLine(TextDecorationLine.None)
+                    .onClick {
+                        scope.launch {
+                            translateX = (-100).percent
+                            opacity = 0.percent
+                            delay(500)
+                            onMenuClosed(false)
+                        }
+                    },
+                path = Section.SILAccommodation.path,
+                text = Section.SILAccommodation.titleVariant,
+                openInternalLinksStrategy = OpenLinkStrategy.IN_PLACE
+            )
 
             Button(
                 attrs = Modifier
