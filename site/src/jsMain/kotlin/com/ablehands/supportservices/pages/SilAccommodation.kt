@@ -14,6 +14,7 @@ import androidx.compose.runtime.remember
 import com.ablehands.supportservices.components.Header2
 import com.ablehands.supportservices.components.OverflowMenu
 import com.ablehands.supportservices.components.VerticalSpacer
+import com.ablehands.supportservices.models.Section
 import com.ablehands.supportservices.models.Theme
 import com.ablehands.supportservices.sections.ContactSection2
 import com.ablehands.supportservices.sections.FooterSection
@@ -22,6 +23,7 @@ import com.ablehands.supportservices.sections.accommodation.AccommodationGallery
 import com.ablehands.supportservices.sections.accommodation.AccommodationImage
 import com.ablehands.supportservices.util.Constants
 import com.ablehands.supportservices.util.Res.Image.ion_location
+import com.varabyte.kobweb.compose.css.Cursor
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -30,15 +32,18 @@ import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.core.Page
-import com.varabyte.kobweb.navigation.OpenLinkStrategy
+import com.varabyte.kobweb.core.init.KobwebConfig
+import com.varabyte.kobweb.core.rememberPageContext
+import com.varabyte.kobweb.navigation.toOpenLinkStrategy
 import com.varabyte.kobweb.silk.components.graphics.Image
-import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.dom.Button
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.Text
 
@@ -47,6 +52,8 @@ import org.jetbrains.compose.web.dom.Text
 fun SilAccommodationPage() {
     val (menuOpened, setMenuOpened) = remember { mutableStateOf(false) }
     val breakpoint = rememberBreakpoint()
+    val ctx = rememberPageContext()
+
 
     Box(modifier = Modifier.fillMaxSize()) {
         Column(
@@ -61,7 +68,7 @@ fun SilAccommodationPage() {
                 attrs = Modifier
                     .margin(top = 42.px, leftRight = 32.px)
                     .textAlign(TextAlign.Center)
-                    .fontFamily(Constants.FONT_FAMILY2)
+                    .fontFamily(Constants.FONT_FAMILY)
                     .fontSize(if (breakpoint < Breakpoint.MD) 24.px else 30.px)
                     .fontWeight(FontWeight.Black)
                     .color(Theme.Primary.rgb)
@@ -98,6 +105,36 @@ fun SilAccommodationPage() {
                         "Victoria Point 4165"
                     )
                 }
+            }
+
+            VerticalSpacer(16f)
+
+            Button(
+                attrs = Modifier
+                    .height(36.px)
+                    .border(width = 0.px)
+                    .borderRadius(r = 16.px)
+                    .padding(leftRight = 16.px)
+                    .fontFamily(Constants.FONT_FAMILY)
+                    .fontWeight(FontWeight.Medium)
+                    .fontSize(16.px)
+                    .backgroundColor(Theme.Primary.rgb)
+                    .color(Colors.White)
+                    .onClick { evt ->
+                        ctx.router.navigateTo(
+                            Section.Contact.path,
+                            openInternalLinksStrategy = evt.toOpenLinkStrategy(
+                                KobwebConfig.Instance.openLinkStrategies.internal
+                            ),
+                            openExternalLinksStrategy = evt.toOpenLinkStrategy(
+                                KobwebConfig.Instance.openLinkStrategies.external
+                            )
+                        )
+                    }
+                    .cursor(Cursor.Pointer)
+                    .toAttrs()
+            ) {
+                Text("Show Interest")
             }
 
             VerticalSpacer(42f)
