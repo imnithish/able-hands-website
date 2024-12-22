@@ -38,6 +38,12 @@ enum class Section(
         titleVariant = "Our Services",
         path = "#services"
     ),
+    SILAccommodation(
+        id = "",
+        title = "",
+        titleVariant = "SIL Accommodation",
+        path = "/sil-accommodation"
+    ),
     Contact(
         id = "contact",
         title = "Contact",

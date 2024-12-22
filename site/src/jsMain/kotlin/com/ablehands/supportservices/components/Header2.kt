@@ -20,6 +20,7 @@ import com.varabyte.kobweb.compose.css.Cursor
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextDecorationLine
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
+import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -63,7 +64,7 @@ fun Header2(onMenuClicked: (Boolean) -> Unit, navToRoot: Boolean = false) {
             HamButton(onMenuClicked)
         else
             Row(
-                modifier = Modifier.margin(left = 36.px, right = 154.px),
+                modifier = Modifier.margin(left = 36.px, right = 80.px),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Section.entries.filterNot { it.id == "main" }.forEachIndexed { index, section ->
@@ -78,15 +79,15 @@ fun Header2(onMenuClicked: (Boolean) -> Unit, navToRoot: Boolean = false) {
                         "contact" -> {
                             Button(
                                 attrs = Modifier
-                                    .height(49.px)
-                                    .width(184.px)
                                     .border(width = 0.px)
+                                    .minWidth(100.px)
                                     .borderRadius(r = 10.px)
                                     .fontFamily(Constants.FONT_FAMILY)
                                     .fontWeight(FontWeight.Medium)
                                     .fontSize(18.px)
                                     .backgroundColor(Theme.Primary.rgb)
                                     .color(Colors.White)
+                                    .align(Alignment.CenterVertically)
                                     .onClick { evt ->
                                         ctx.router.navigateTo(
                                             section.path,
@@ -101,7 +102,9 @@ fun Header2(onMenuClicked: (Boolean) -> Unit, navToRoot: Boolean = false) {
                                     .cursor(Cursor.Pointer)
                                     .toAttrs()
                             ) {
-                                Text(section.titleVariant)
+                                Box(modifier = Modifier.padding(12.px), contentAlignment = Alignment.Center) {
+                                    Text(section.titleVariant)
+                                }
                             }
                         }
 
@@ -111,9 +114,9 @@ fun Header2(onMenuClicked: (Boolean) -> Unit, navToRoot: Boolean = false) {
                                     .fontFamily(Constants.FONT_FAMILY)
                                     .fontSize(20.px)
                                     .fontWeight(FontWeight.Medium)
-                                    .margin(right = if (index == 3) 0.px else 48.px)
+                                    .margin(right = if (index == 4) 0.px else 48.px)
                                     .textDecorationLine(TextDecorationLine.None),
-                                path = if (navToRoot) "/${section.path}" else section.path,
+                                path = if (section.path.startsWith('/')) section.path else if (navToRoot) "/${section.path}" else section.path,
                                 text = section.titleVariant
                             )
                         }

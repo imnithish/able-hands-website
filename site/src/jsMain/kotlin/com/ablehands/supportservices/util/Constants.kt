@@ -182,7 +182,7 @@ object Content {
             "Assistance with travel and transport arrangements"
         ),
         Pair("community_nursing_care", "Community nursing care"),
-        Pair("/sil-accommodation", "SIL Accommodation")
+//        Pair("/sil-accommodation", "SIL Accommodation")
     )
 
     val aboutSub = listOf(
